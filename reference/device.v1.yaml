@@ -1,13 +1,14 @@
 openapi: 3.0.0
 info:
-  title: device
+  title: Gateway Services
   version: '1.0'
+  description: Service entry to gateway devices
 servers:
   - url: 'http://localhost:3000'
 paths:
-  /device/report:
+  /device/reports:
     get:
-      summary: Return a report
+      summary: Retrieve gateway device data
       tags: []
       responses:
         '200':
@@ -22,12 +23,12 @@ paths:
             type: string
           in: query
           name: gateway_id
-          description: typically the imei number
+          description: imei number
         - schema:
             type: string
             enum:
-              - SEQUENCE
               - DATETIME
+              - SEQUENCE
           in: query
           name: query_method
           description: ''
@@ -37,9 +38,11 @@ paths:
           name: from
           description: 'from: [datetime or gateway_sequence_number]'
         - schema:
-            type: integer
+            type: string
           in: query
           name: to
           description: 'to: [either datetime or gateway_sequence_number]'
+      description: 'Provides ability to pull historical gateway device data to authorized system accounts. This endpoint does not attempt a real-time status check from the device. The max result set is 10,000 records. If the gateway_id parameter is passed in, and no other filters are set, only the last 20 reports will be returned. This will be made more configurable in future releases.  '
+    parameters: []
 components:
   schemas: {}
