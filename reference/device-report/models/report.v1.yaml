@@ -1,5 +1,5 @@
 title: Gateway Report
-description: Standard used to represent a report from PCT devices
+description: Standard json report showing gateway data
 type: object
 xml:
   name: Reports

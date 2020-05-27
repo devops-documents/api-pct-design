@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Gateway Services
   version: '1.0'
-  description: Service entry to gateway devices
+  description: 'API allowing access to the data generated from gateway and sensors. '
 servers:
   - url: 'http://localhost:3000'
 paths:
