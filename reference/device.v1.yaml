@@ -3,13 +3,17 @@ info:
   title: Gateway Services
   version: '1.0'
   description: 'API allowing access to the data generated from gateway and sensors. '
+  contact:
+    name: Brent Whitney
+    email: bwhitney@phillipsind.com
 servers:
   - url: 'http://localhost:3000'
 paths:
   /device/reports:
     get:
       summary: Retrieve gateway device data
-      tags: []
+      tags:
+        - Gateway
       responses:
         '200':
           description: OK
@@ -46,3 +50,5 @@ paths:
     parameters: []
 components:
   schemas: {}
+tags:
+  - name: Gateway
