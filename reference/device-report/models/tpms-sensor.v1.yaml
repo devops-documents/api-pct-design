@@ -1,0 +1,47 @@
+title: TPMS sensor
+type: object
+description: ''
+properties:
+  type:
+    type: string
+    enum:
+      - TPMS
+  condition:
+    type: string
+    enum:
+      - healthy
+      - unresponsive
+      - error
+  measurements:
+    type: array
+    items:
+      type: object
+      properties:
+        temperature:
+          type: number
+          description: Units in celcius rounded to nearest tenth.
+        pressure:
+          description: Units in millibars
+          type: integer
+        axle_index:
+          type: string
+          description: Location of the axle from front (axle 1) to rear (axle n)
+        tire_index:
+          type: string
+          description: |
+            Relative location of the tire:
+
+            For a normal dual tire configuration:
+
+            1 is the curbside outer tire
+            2 is the roadside outer tire
+            3 is the curbside inner tire
+            4 is the roadside inner tire
+
+            For a super single configuration:
+
+            1 is the curbside tire
+            2 is the roadside tire
+required:
+  - type
+  - condition

@@ -1,0 +1,15 @@
+title: ATIS sensor
+type: object
+properties:
+  type:
+    type: string
+    enum:
+      - ATIS
+  condition:
+    type: string
+    enum:
+      - unknown
+  airflow_alert:
+    type: boolean
+required:
+  - type

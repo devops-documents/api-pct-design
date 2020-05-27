@@ -1,0 +1,21 @@
+title: Cargo sensor
+type: object
+properties:
+  type:
+    type: string
+    enum:
+      - cargo-sensor
+  condition:
+    type: string
+    enum:
+      - healthy
+      - unresponsive
+      - error
+  cargo-state:
+    type: string
+    enum:
+      - loaded
+      - empty
+      - unknown
+required:
+  - type

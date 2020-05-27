@@ -1,0 +1,45 @@
+openapi: 3.0.0
+info:
+  title: device
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /device/report:
+    get:
+      summary: Return a report
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./device-report/models/report.v1.yaml
+      operationId: get-device-report
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: gateway_id
+          description: typically the imei number
+        - schema:
+            type: string
+            enum:
+              - SEQUENCE
+              - DATETIME
+          in: query
+          name: query_method
+          description: ''
+        - schema:
+            type: string
+          in: query
+          name: from
+          description: 'from: [datetime or gateway_sequence_number]'
+        - schema:
+            type: integer
+          in: query
+          name: to
+          description: 'to: [either datetime or gateway_sequence_number]'
+components:
+  schemas: {}

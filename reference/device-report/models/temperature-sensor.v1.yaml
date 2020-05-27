@@ -1,0 +1,15 @@
+title: Temperature sensor
+type: object
+properties:
+  type:
+    type: string
+    enum:
+      - temperature-sensor
+  internal_temperature_1:
+    type: number
+    description: Units in celcius rounded to nearest tenth.
+  internal_temperature_2:
+    type: number
+    description: Units in celcius rounded to nearest tenth.
+required:
+  - type

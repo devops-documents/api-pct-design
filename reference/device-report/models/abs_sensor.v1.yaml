@@ -1,0 +1,42 @@
+title: ABS Sensor
+type: object
+description: ''
+properties:
+  type:
+    type: string
+    enum:
+      - ABS
+  condition:
+    type: string
+    enum:
+      - healthy
+      - unresponsive
+      - error
+  odometer:
+    type: number
+    description: Units in kilometers rounded to nearest tenth
+  VIN:
+    type: string
+  voltage:
+    type: number
+    description: Units in volts with two digits of precision
+    format: float
+    example: '11.23'
+  faults:
+    type: array
+    description: Based on the J1587 standard
+    items:
+      type: object
+      properties:
+        SID:
+          type: string
+        is_active:
+          type: boolean
+        count:
+          type: integer
+        FMI_code:
+          type: string
+        FMI_description:
+          type: string
+required:
+  - type
