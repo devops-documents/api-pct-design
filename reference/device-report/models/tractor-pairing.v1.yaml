@@ -17,5 +17,3 @@ properties:
       - unpaired
   unique_id:
     type: string
-  t:
-    type: string

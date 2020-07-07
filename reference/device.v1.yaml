@@ -1,15 +1,16 @@
 openapi: 3.0.0
 info:
-  title: Gateway Services
+  title: Phillips-Connect Technologies API
   version: '1.0'
-  description: 'API allowing access to the data generated from gateway and sensors. '
+  description: ''
   contact:
     name: Brent Whitney
     email: bwhitney@phillipsind.com
 servers:
-  - url: 'http://localhost:3000'
+  - url: 'https://api.phillips-connect.com/api'
+    description: Prod API
 paths:
-  /device/reports:
+  /gateway/reports:
     get:
       summary: Retrieve gateway device data
       tags:
@@ -20,14 +21,47 @@ paths:
           content:
             application/json:
               schema:
+                type: object
+                properties:
+                  '':
+                    $ref: ./device-report/models/report.v1.yaml
+                  total_reports:
+                    type: integer
+                  current_page:
+                    type: integer
+                  total_pages:
+                    type: integer
+            multipart/form-data:
+              schema:
+                type: object
+                properties: {}
+            text/html:
+              schema:
                 $ref: ./device-report/models/report.v1.yaml
+            text/plain:
+              schema:
+                type: object
+                properties:
+                  '':
+                    $ref: ./device-report/models/report.v1.yaml
+                  total_reports:
+                    type: integer
+                    description: Total reports based on the search criteria specified in the request
+                  current_page:
+                    type: integer
+                    description: Current page index
+                  total_pages:
+                    type: integer
+                    description: Total number of pages based on the result set
+          headers: {}
       operationId: get-device-report
       parameters:
         - schema:
             type: string
           in: query
-          name: gateway_id
-          description: imei number
+          name: gateway-id
+          description: |
+            Required to search by gateway-id (imei). If the query-method is set to GATEWAY_NUMBER, the gateway-id must be specificied
         - schema:
             type: string
             enum:
@@ -35,21 +69,42 @@ paths:
               - REPORT_NUMBER
               - GATEWAY_NUMBER
           in: query
-          name: query_method
-          description: "indicates how to process the 'from' and 'to'"
+          name: query-method
+          description: |
+            Indicates how to query the server
+
+            REPORT-NUMBER is a sequential number assigned for each report that is generated across all customer devices
+
+            GATEWAY_NUMBER is a sequential number assigned for each report that is generated per customer device
+
+            DATETIME is the datetime of when the report is received by the PCT server
         - schema:
             type: string
           in: query
           name: from
-          description: 'from: [server datetime | sequence number]'
+          description: 'From: [server datetime | report number | gateway number]'
         - schema:
             type: string
           in: query
           name: to
-          description: 'to: [server datetime | sequence number]'
-      description: 'API to pull historical gateway device data to authorized system users. Open ended queries will return the last 100 reports. If the query method is used, a maximum of 10,000 reports can be returned per call.  '
+          description: 'To: [server datetime | report number | gateway number]'
+        - schema:
+            type: integer
+          in: query
+          name: results-per-page
+          description: Number of results per page
+        - schema:
+            type: integer
+          in: query
+          name: page-index
+          description: 'For a multi-page query, returns the specified page (from 1 to total_pages)'
+      description: "Returns historical gateway reports. Reports are generated based on PCT event types.\n\nOpen ended queries will pull recent reports across all gateways for a given customer (based on the data you are authorized to see, or you can limit this by providing a gateway-id (imei). \n\nFor further filtering, you can pass in a query method and provide the appropriate 'from' and 'to'. See specific instructions in the appropriate fields.   "
     parameters: []
 components:
   schemas: {}
+  securitySchemes:
+    API Key - 1:
+      type: http
+      scheme: bearer
 tags:
   - name: Gateway
