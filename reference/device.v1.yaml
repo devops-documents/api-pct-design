@@ -12,7 +12,7 @@ servers:
 paths:
   /gateway/reports:
     get:
-      summary: Retrieve gateway device data
+      summary: Retrieve gateway reports
       tags:
         - Gateway
       responses:
@@ -92,7 +92,7 @@ paths:
             type: integer
           in: query
           name: results-per-page
-          description: Number of results per page
+          description: Number of results per page. Default is 1000.
         - schema:
             type: integer
           in: query
