@@ -132,5 +132,7 @@ required:
   - report_number
   - event_datetime
   - event_name
-  - version
+  - server_datetime
+  - gateway_number
   - summary
+  - version
