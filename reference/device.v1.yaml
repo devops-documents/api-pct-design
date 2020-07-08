@@ -23,14 +23,20 @@ paths:
               schema:
                 type: object
                 properties:
-                  '':
-                    $ref: ./device-report/models/report.v1.yaml
+                  body:
+                    type: array
+                    items:
+                      $ref: ./device-report/models/report.v1.yaml
                   total_reports:
                     type: integer
                   current_page:
                     type: integer
                   total_pages:
                     type: integer
+                  response_message:
+                    type: string
+                  status:
+                    type: boolean
             multipart/form-data:
               schema:
                 type: object

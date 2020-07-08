@@ -1,5 +1,5 @@
 title: Gateway Report
-description: Standard json report showing gateway data
+description: Standard device report that is generated based on triggered events
 type: object
 xml:
   name: Reports
@@ -26,11 +26,9 @@ properties:
   server_datetime:
     type: string
     description: The datetime that the report was received in the serverin UTC. Format is ISO8601
-  gateway_sequence_number:
+  gateway_number:
     type: integer
-  version:
-    type: string
-    description: "Version format is a.b.c  \n\n(a) is major change\n(b) is minor change, may possibly partially break some endpoints\n(c) is for inclusion of new fields, totally backwards compatible\n"
+    description: Counter that increments for each distinct report sent for this gateway device
   summary:
     type: object
     properties:
@@ -103,16 +101,16 @@ properties:
     type: array
     items:
       anyOf:
-        - $ref: ./gps_sensor.v1.yaml
+        - $ref: ./gps-sensor.v1.yaml
         - $ref: ./temperature-sensor.v1.yaml
         - $ref: ./power-sensor.v1.yaml
   peripheral_sensors:
     type: array
     items:
       anyOf:
-        - $ref: ./abs_sensor.v1.yaml
+        - $ref: ./abs-sensor.v1.yaml
         - $ref: ./atis-sensor.v1.yaml
-        - $ref: ./cargo_sensor.v1.yaml
+        - $ref: ./cargo-sensor.v1.yaml
         - $ref: ./tpms-sensor.v1.yaml
         - $ref: ./door-sensor.v1.yaml
         - $ref: ./gladhands.v1.yaml
@@ -120,6 +118,15 @@ properties:
         - $ref: ./tank-pressure.v1.yaml
         - $ref: ./trailer-weight.v1.yaml
         - $ref: ./tractor-pairing.v1.yaml
+  debug_number:
+    type: integer
+    description: For PCT use. Please store this along with the report
+  gateway_sequence:
+    type: integer
+    description: Depracated. Please begin using gateway_number
+  version:
+    type: string
+    description: "Version format is a.b.c  \n\n(a) is major change\n(b) is minor change, may possibly partially break some endpoints\n(c) is for inclusion of new fields, totally backwards compatible"
 required:
   - gateway_id
   - report_number
