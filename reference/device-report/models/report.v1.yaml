@@ -34,15 +34,14 @@ properties:
     properties:
       latitude:
         type: number
-        default: 33.678925
         description: Floating number with 6 digits of precision
         format: float
+        example: '33.628342'
       longitude:
         type: number
-        default: -117.862869
         description: Floating number with 6 digits of precision
         format: float
-        example: '37.143215'
+        example: '-117.927933'
       location_datetime:
         type: string
         description: Datetime of when the GPS measurements were taken in UTC. Format is ISO8601.

@@ -1,5 +1,6 @@
 title: GPS sensor
 type: object
+description: ''
 properties:
   type:
     type: string
@@ -7,8 +8,14 @@ properties:
       - gps-sensor
   latitude:
     type: number
+    description: Floating number with 6 digits of precision
+    format: float
+    example: '33.628342'
   longitude:
     type: number
+    description: Floating number with 6 digits of precision
+    format: float
+    example: '-117.927933'
   measurement_datetime:
     type: string
     description: The datetime of the GPS reading in UTC. Format is ISO8601.
