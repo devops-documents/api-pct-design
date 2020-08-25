@@ -74,28 +74,6 @@ properties:
       ambient_temperature:
         type: number
         description: Units in celcius rounded to nearest tenth.
-      is_door_closed:
-        type: boolean
-        enum:
-          - open
-          - closed
-      tank_pressure:
-        type: number
-      is_paired:
-        type: boolean
-        enum:
-          - paired
-          - not-paired
-      lite_sentry_status:
-        type: string
-        enum:
-          - normal
-          - light-out
-      gladhands_status:
-        type: string
-        enum:
-          - locked
-          - unlocked
   internal_sensors:
     type: array
     items:
