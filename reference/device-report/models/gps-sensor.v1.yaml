@@ -23,5 +23,18 @@ properties:
   speed:
     description: Units in kilometers per hour rounded to nearest tenth.
     type: number
+  HDOP:
+    type: number
+    description: Floating number with 1 digit of precision
+    format: float
+    example: 1.6
+  satellite_count:
+    type: integer
+    description: Integer representng the number of satellites
+  gps_accuracy:
+    type: number
+    format: float
+    example: 2.3
+    description: Floating number with 2 digits of precision
 required:
   - type

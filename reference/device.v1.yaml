@@ -77,6 +77,7 @@ paths:
               - DATETIME
               - REPORT_NUMBER
               - GATEWAY_NUMBER
+              - LATEST
           in: query
           name: query-method
           description: |
@@ -107,7 +108,12 @@ paths:
           in: query
           name: page-index
           description: 'For a multi-page query, returns the specified page (from 1 to total_pages)'
-      description: "Returns historical gateway reports. Reports are generated based on PCT event types.\n\nOpen ended queries will pull recent reports across all gateways for a given customer (based on the data you are authorized to see, or you can limit this by providing a gateway-id (imei). \n\nFor further filtering, you can pass in a query method and provide the appropriate 'from' and 'to'. See specific instructions in the appropriate fields.   "
+      description: |-
+        Returns historical gateway reports. Reports are generated based on PCT event types.
+
+        Open ended queries will pull recent reports across all gateways for a given customer (based on the data you are authorized to see, or you can limit this by providing a gateway-id (imei). 
+
+        For further filtering, you can pass in a query method and provide the appropriate 'from' and 'to'. See specific instructions in the appropriate fields.   
     parameters: []
   /token/login:
     post:
