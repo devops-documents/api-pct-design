@@ -13,8 +13,6 @@ paths:
   /reports:
     get:
       summary: Retrieve gateway reports
-      tags:
-        - Gateway
       responses:
         '200':
           description: OK
@@ -114,11 +112,14 @@ paths:
         Open ended queries will pull recent reports across all gateways for a given customer (based on the data you are authorized to see, or you can limit this by providing a gateway-id (imei). 
 
         For further filtering, you can pass in a query method and provide the appropriate 'from' and 'to'. See specific instructions in the appropriate fields.   
+      tags:
+        - Reports
     parameters: []
   /token/login:
     post:
       summary: Generate a PCT API token
-      tags: []
+      tags:
+        - Security Token
       responses:
         '200':
           description: OK
@@ -148,7 +149,8 @@ paths:
   /asset/assign:
     post:
       summary: Asset association
-      tags: []
+      tags:
+        - Asset
       responses:
         '200':
           description: OK
@@ -172,7 +174,8 @@ paths:
   /asset/reassign:
     post:
       summary: Asset reassignment
-      tags: []
+      tags:
+        - Asset
       responses:
         '200':
           description: OK
@@ -197,7 +200,8 @@ paths:
   /asset/unassign:
     post:
       summary: Asset dissociation
-      tags: []
+      tags:
+        - Asset
       responses:
         '200':
           description: OK
