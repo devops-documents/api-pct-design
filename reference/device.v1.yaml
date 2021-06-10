@@ -147,7 +147,7 @@ paths:
       description: Generate a token to be used in API calls
   /asset/assign:
     post:
-      summary: Asset to gateway association
+      summary: Gateway assigned to an asset
       tags: []
       responses:
         '200':
@@ -171,7 +171,7 @@ paths:
     parameters: []
   /asset/reassign:
     post:
-      summary: Reassigning the gateway to a new asset
+      summary: Gateway installed on a new asset
       tags: []
       responses:
         '200':
@@ -189,14 +189,14 @@ paths:
                   type: string
                 new_asset_id:
                   type: string
-                update_datetime:
+                event_datetime:
                   type: string
         description: Move the gateway to a new asset
       description: Called when the gateway is moved to a different asset
     parameters: []
   /asset/unassign:
     post:
-      summary: Asset to gateway dissociation
+      summary: Gateway removed from an asset
       tags: []
       responses:
         '200':
@@ -212,7 +212,7 @@ paths:
                   type: string
                 asset_id:
                   type: string
-                update_datetime:
+                event_datetime:
                   type: string
         description: Dissociate the asset from a gateway
       description: Called when the gateway is uninstalled on an asset
