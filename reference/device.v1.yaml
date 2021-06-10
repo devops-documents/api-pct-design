@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Phillips-Connect Technologies API
   version: '1.0'
-  description: ''
+  description: 'Main API to interact with PCT'
   contact:
     name: Brent Whitney
     email: bwhitney@phillipsind.com
