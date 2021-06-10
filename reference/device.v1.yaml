@@ -223,6 +223,3 @@ components:
     API Key - 1:
       type: http
       scheme: bearer
-tags:
-  - name: Gateway
-  - name: Reports
