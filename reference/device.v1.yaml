@@ -7,10 +7,10 @@ info:
     name: Brent Whitney
     email: bwhitney@phillipsind.com
 servers:
-  - url: 'https://api.phillips-connect.com/api'
+  - url: 'https://api.phillips-connect.com'
     description: Prod API
 paths:
-  /gateway/reports:
+  /reports:
     get:
       summary: Retrieve gateway reports
       tags:
@@ -144,6 +144,68 @@ paths:
                   type: string
                 password:
                   type: string
+  /asset/assign:
+    post:
+      summary: Associate an asset to a gateway
+      tags: []
+      responses: {}
+      operationId: post-asset
+      description: Associate an asset to a gateway
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                gateway_id:
+                  type: string
+                asset_id:
+                  type: string
+                event_datetime:
+                  type: string
+                  description: Time that the gateway was associated to the gateway
+                '':
+                  type: string
+    parameters: []
+  /asset/reassign:
+    post:
+      summary: Move the gateway to a new asset
+      tags: []
+      responses: {}
+      operationId: post-asset-replace
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                gateway_id:
+                  type: string
+                old_asset_id:
+                  type: string
+                new_asset_id:
+                  type: string
+                event_datetime:
+                  type: string
+    parameters: []
+  /asset/unassign:
+    post:
+      summary: Un-associate a gateway and asset
+      tags: []
+      responses: {}
+      operationId: post-asset-remove
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                gateway_id:
+                  type: string
+                asset_id:
+                  type: string
+      description: ''
+    parameters: []
 components:
   schemas: {}
   securitySchemes:

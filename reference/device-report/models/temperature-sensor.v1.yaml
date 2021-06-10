@@ -5,11 +5,14 @@ properties:
     type: string
     enum:
       - temperature-sensor
-  internal_temperature_1:
-    type: number
-    description: Units in celcius rounded to nearest tenth.
-  internal_temperature_2:
-    type: number
-    description: Units in celcius rounded to nearest tenth.
+  measurements:
+    type: array
+    items:
+      type: object
+      properties:
+        sensor_id:
+          type: string
+        temperature:
+          type: string
 required:
   - type
