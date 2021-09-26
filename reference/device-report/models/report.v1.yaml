@@ -12,6 +12,9 @@ properties:
   asset_id:
     type: string
     description: The asset-id that the gateway is assigned to
+  vin:
+    type: string
+    description: VIN number
   report_number:
     type: integer
     description: 'A number to that is auto-incremented for each valid report processed by the server '
@@ -95,6 +98,7 @@ properties:
         - $ref: ./tank-pressure.v1.yaml
         - $ref: ./trailer-weight.v1.yaml
         - $ref: ./tractor-pairing.v1.yaml
+        - $ref: ./temperature-sensor.v1.yaml
   debug_number:
     type: integer
     description: For PCT use. Please store this along with the report
@@ -103,7 +107,12 @@ properties:
     description: Depracated. Please begin using gateway_number
   version:
     type: string
-    description: "Version format is a.b.c  \n\n(a) is major change\n(b) is minor change, may possibly partially break some endpoints\n(c) is for inclusion of new fields, totally backwards compatible"
+    description: |-
+      Version format is a.b.c  
+
+      (a) is major change
+      (b) is minor change, may possibly partially break some endpoints
+      (c) is for inclusion of new fields, totally backwards compatible
 required:
   - gateway_id
   - report_number
