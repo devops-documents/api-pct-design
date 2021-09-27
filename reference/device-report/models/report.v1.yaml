@@ -5,6 +5,7 @@ xml:
   name: Reports
 x-examples:
   example-1: {}
+x-internal: true
 properties:
   gateway_id:
     type: string
@@ -14,7 +15,7 @@ properties:
     description: The asset-id that the gateway is assigned to
   vin:
     type: string
-    description: VIN number
+    description: VIN number of the asset-id
   report_number:
     type: integer
     description: 'A number to that is auto-incremented for each valid report processed by the server '
