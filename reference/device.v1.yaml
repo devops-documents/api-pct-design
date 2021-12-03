@@ -100,7 +100,7 @@ paths:
             type: integer
           in: query
           name: results-per-page
-          description: Number of results per page. Default is 1000.
+          description: Number of results per page. Default is 1000 records
         - schema:
             type: integer
           in: query
