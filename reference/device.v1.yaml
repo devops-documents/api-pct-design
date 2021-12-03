@@ -105,7 +105,7 @@ paths:
             type: integer
           in: query
           name: page-index
-          description: 'For a multi-page query, returns the specified page (from 1 to the total_pages) '
+          description: 'For a multi-page query, returns the specified page (from 1 to total_pages) '
       description: |-
         Returns historical gateway reports. Reports are generated based on PCT event types.
 
