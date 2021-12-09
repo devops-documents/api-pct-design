@@ -8,7 +8,7 @@ paths:
   /gateway:
     parameters: []
     get:
-      summary: Get User Info by User ID
+      summary: Gateway Operations
       tags: []
       responses:
         '200':
@@ -16,24 +16,188 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/gateway'
+                type: object
+                properties:
+                  body:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/gateway'
+                  current_index:
+                    type: integer
+                  total_records:
+                    type: integer
+                  response_message:
+                    type: string
+                  status:
+                    type:
+                      - string
+                      - boolean
+                  total_pages:
+                    type: integer
               examples:
-                Get User Alice Smith:
+                example-1:
                   value:
-                    id: 142
-                    firstName: Alice
-                    lastName: Smith
-                    email: alice.smith@gmail.com
-                    dateOfBirth: '1997-10-31'
-                    emailVerified: true
-                    signUpDate: '2019-08-24'
+                    body:
+                      - imei: string
+                        product_code: string
+                        product_name: string
+                        quantity_shipped: string
+                        app_version: string
+                        mcu_version: string
+                        bin_version: string
+                        ble_version: string
+                        other1_version: string
+                        other2_version: string
+                        config1: string
+                        config2: string
+                        config3: string
+                        config4: string
+                        epicor_order_number: string
+                        can: string
+                        son: string
+                        cellular: string
+                        uuid: string
+                        iccid: string
+                        imsi: string
+                        carrier_id: string
+                        country_code: string
+                        phone_number: string
+                        sensors:
+                          - sensor_id: string
+                            type: string
+                            mac_address: string
+                            status: string
+                            name: string
+                            product_code: string
+                            product_name: string
+                        asset:
+                          asset_id: string
+                          assigned_name: string
+                          category: string
+                          comment: string
+                          manufacturer: string
+                          status: string
+                          vin: string
+                          vin_validated: true
+                          year: string
+                    current_index: 0
+                    total_records: 0
+                    response_message: string
+                    status: string
+                    total_pages: 0
+                example-2:
+                  value:
+                    body:
+                      - imei: string
+                        product_code: string
+                        product_name: string
+                        quantity_shipped: string
+                        app_version: string
+                        mcu_version: string
+                        bin_version: string
+                        ble_version: string
+                        other1_version: string
+                        other2_version: string
+                        config1: string
+                        config2: string
+                        config3: string
+                        config4: string
+                        epicor_order_number: string
+                        can: string
+                        son: string
+                        cellular: string
+                        uuid: string
+                        iccid: string
+                        imsi: string
+                        carrier_id: string
+                        country_code: string
+                        phone_number: string
+                        sensors:
+                          - sensor_id: string
+                            type: string
+                            mac_address: string
+                            status: string
+                            name: string
+                            product_code: string
+                            product_name: string
+                        asset:
+                          asset_id: string
+                          assigned_name: string
+                          category: string
+                          comment: string
+                          manufacturer: string
+                          status: string
+                          vin: string
+                          vin_validated: true
+                          year: string
+                    current_index: 0
+                    total_records: 0
+                    response_message: string
+                    status: string
+                    total_pages: 0
+                example-3:
+                  value:
+                    body:
+                      - imei: string
+                        product_code: string
+                        product_name: string
+                        quantity_shipped: string
+                        app_version: string
+                        mcu_version: string
+                        bin_version: string
+                        ble_version: string
+                        other1_version: string
+                        other2_version: string
+                        config1: string
+                        config2: string
+                        config3: string
+                        config4: string
+                        epicor_order_number: string
+                        can: string
+                        son: string
+                        cellular: string
+                        uuid: string
+                        iccid: string
+                        imsi: string
+                        carrier_id: string
+                        country_code: string
+                        phone_number: string
+                        sensors:
+                          - sensor_id: string
+                            type: string
+                            mac_address: string
+                            status: string
+                            name: string
+                            product_code: string
+                            product_name: string
+                        asset:
+                          asset_id: string
+                          assigned_name: string
+                          category: string
+                          comment: string
+                          manufacturer: string
+                          status: string
+                          vin: string
+                          vin_validated: true
+                          year: string
+                    current_index: 0
+                    total_records: 0
+                    response_message: string
+                    status: string
+                    total_pages: 0
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
         '404':
           description: User Not Found
       operationId: gateways
       description: |-
         Returns the list of gateways.
 
-        Open ended queries will pull gateways for a given customer (based on the data you are authorized to see).
+        Open ended queries will pull gateways (based on the data you are authorized to see).
 
         For further filtering, you can pass in a query method and provide the appropriate parameters. See specific instructions in the appropriate fields.   
       parameters:
@@ -57,6 +221,7 @@ paths:
           in: query
           name: gateway-id
           description: required to search by getway-id(imei)
+      x-internal: false
     patch:
       summary: Update User Information
       operationId: patch-users-userId
@@ -109,60 +274,162 @@ paths:
                   lastName: Baker
                   dateOfBirth: '1985-10-02'
         description: Patch user properties to update.
-  /user:
     post:
-      summary: Create New User
-      operationId: post-user
+      summary: ''
+      operationId: post-gateway
       responses:
         '200':
-          description: User Created
+          description: OK
+  /sensor:
+    get:
+      summary: get list of sensor
+      tags: []
+      responses:
+        '200':
+          description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    body:
+                      - imei: string
+                    current_index: 0
+                    total_records: 0
+                    response_message: string
+                    status: string
+                    total_pages: 0
+                properties:
+                  body:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      $ref: '#/components/schemas/sensor'
+                  current_index:
+                    type: number
+                  total_records:
+                    type: number
+                  response_message:
+                    type: string
+                    minLength: 1
+                  status:
+                    type: string
+                    minLength: 1
+                  total_pages:
+                    type: number
+                required:
+                  - body
+                  - current_index
+                  - total_records
+                  - response_message
+                  - status
+                  - total_pages
               examples:
-                New User Bob Fellow:
+                example-1:
                   value:
-                    id: 12
-                    firstName: Bob
-                    lastName: Fellow
-                    email: bob.fellow@gmail.com
-                    dateOfBirth: '1996-08-24'
-                    emailVerified: false
-                    createDate: '2020-11-18'
-        '400':
-          description: Missing Required Information
-        '409':
-          description: Email Already Taken
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                firstName:
-                  type: string
-                lastName:
-                  type: string
-                email:
-                  type: string
-                dateOfBirth:
-                  type: string
-                  format: date
-              required:
-                - firstName
-                - lastName
-                - email
-                - dateOfBirth
-            examples:
-              Create User Bob Fellow:
-                value:
-                  firstName: Bob
-                  lastName: Fellow
-                  email: bob.fellow@gmail.com
-                  dateOfBirth: '1996-08-24'
-        description: Post the necessary fields for the API to create a new user.
-      description: Create a new user.
+                    body:
+                      - sensor_id: string
+                        type: string
+                        mac_address: string
+                        status: string
+                        name: string
+                        product_code: string
+                        product_name: string
+                    current_index: 0
+                    total_records: 0
+                    response_message: string
+                    status: string
+                    total_pages: 0
+                example-2:
+                  value:
+                    body:
+                      - sensor_id: string
+                        type: string
+                        mac_address: string
+                        status: string
+                        name: string
+                        product_code: string
+                        product_name: string
+                    current_index: 0
+                    total_records: 0
+                    response_message: string
+                    status: string
+                    total_pages: 0
+      operationId: get-sensor
+  /asset:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    body:
+                      - asset_id: string
+                    current_index: 0
+                    total_records: 0
+                    response_message: string
+                    status: string
+                    total_pages: 0
+                properties:
+                  body:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      $ref: '#/components/schemas/asset'
+                  current_index:
+                    type: number
+                  total_records:
+                    type: number
+                  response_message:
+                    type: string
+                    minLength: 1
+                  status:
+                    type: string
+                    minLength: 1
+                  total_pages:
+                    type: number
+                required:
+                  - body
+                  - current_index
+                  - total_records
+                  - response_message
+                  - status
+                  - total_pages
+              examples:
+                example-1:
+                  value:
+                    body:
+                      - asset_id: string
+                        assigned_name: string
+                        category: string
+                        comment: string
+                        manufacturer: string
+                        status: string
+                        vin: string
+                        year: string
+                    current_index: 0
+                    total_records: 0
+                    response_message: string
+                    status: string
+                    total_pages: 0
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  '':
+                    type: string
+      operationId: get-asset
 components:
   schemas:
     gateway:
