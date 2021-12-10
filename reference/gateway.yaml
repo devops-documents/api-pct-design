@@ -221,65 +221,18 @@ paths:
           in: query
           name: gateway-id
           description: required to search by getway-id(imei)
+        - schema:
+            type: string
+          in: query
+          name: asset-id
       x-internal: false
-    patch:
-      summary: Update User Information
-      operationId: patch-users-userId
-      responses:
-        '200':
-          description: User Updated
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-              examples:
-                Updated User Rebecca Baker:
-                  value:
-                    id: 13
-                    firstName: Rebecca
-                    lastName: Baker
-                    email: rebecca@gmail.com
-                    dateOfBirth: '1985-10-02'
-                    emailVerified: false
-                    createDate: '2019-08-24'
-        '404':
-          description: User Not Found
-        '409':
-          description: Email Already Taken
-      description: Update the information of an existing user.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                firstName:
-                  type: string
-                lastName:
-                  type: string
-                email:
-                  type: string
-                  description: 'If a new email is given, the user''s email verified property will be set to false.'
-                dateOfBirth:
-                  type: string
-            examples:
-              Update First Name:
-                value:
-                  firstName: Rebecca
-              Update Email:
-                value:
-                  email: rebecca@gmail.com
-              Update Last Name & Date of Birth:
-                value:
-                  lastName: Baker
-                  dateOfBirth: '1985-10-02'
-        description: Patch user properties to update.
     post:
       summary: ''
       operationId: post-gateway
       responses:
         '200':
           description: OK
+      description: ''
   /sensor:
     get:
       summary: get list of sensor
@@ -358,11 +311,79 @@ paths:
                     response_message: string
                     status: string
                     total_pages: 0
+                example-3:
+                  value:
+                    body:
+                      - sensor_id: string
+                        type: string
+                        mac_address: string
+                        status: string
+                        name: string
+                        product_code: string
+                        product_name: string
+                    current_index: 0
+                    total_records: 0
+                    response_message: string
+                    status: string
+                    total_pages: 0
       operationId: get-sensor
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: page-index
+        - schema:
+            type: integer
+          in: query
+          name: results-per-page
+        - schema:
+            type: string
+          in: query
+          name: gateway-id
+        - schema:
+            type: string
+          in: query
+          name: sensor-id
+        - schema:
+            type: string
+          in: query
+          name: asset-id
   /asset:
+    post:
+      summary: ''
+      operationId: post-asset
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                gateway_id:
+                  type: string
+                  minLength: 1
+                asset_id:
+                  type: string
+                  minLength: 1
+                event_datetime:
+                  type: string
+                  minLength: 1
+              required:
+                - gateway_id
+                - asset_id
+                - event_datetime
+              x-examples:
+                example-1:
+                  gateway_id: string
+                  asset_id: string
+                  event_datetime: string
+    parameters: []
     get:
-      summary: Your GET endpoint
-      tags: []
+      summary: ''
+      operationId: get-asset
       responses:
         '200':
           description: OK
@@ -375,6 +396,12 @@ paths:
                   example-1:
                     body:
                       - asset_id: string
+                        type: string
+                        mac_address: string
+                        status: string
+                        name: string
+                        product_code: string
+                        product_name: string
                     current_index: 0
                     total_records: 0
                     response_message: string
@@ -423,13 +450,44 @@ paths:
                     response_message: string
                     status: string
                     total_pages: 0
-            application/xml:
+  /asset/assign:
+    post:
+      summary: ''
+      operationId: post-asset-assign
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+  /asset/reassign:
+    post:
+      summary: ''
+      operationId: post-asset-reassign
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+  /asset/unassign:
+    post:
+      summary: ''
+      operationId: post-asset-unassign
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
               schema:
                 type: object
-                properties:
-                  '':
-                    type: string
-      operationId: get-asset
+                properties: {}
 components:
   schemas:
     gateway:
