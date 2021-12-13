@@ -270,7 +270,35 @@ paths:
                   - response_message
                   - status
                   - total_pages
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    body:
+                      - sensor_id: string
+                        type: string
+                        mac_address: string
+                        status: string
+                        name: string
+                        product:
+                          product_code: string
+                          product_name: string
+                          type: string
+                          manufacturer:
+                            orgnisation_id: string
+                            orgnisation_name: string
+                            account_number: string
+                            type: string
+                        manufacturer:
+                          orgnisation_id: string
+                          orgnisation_name: string
+                          account_number: string
+                          type: string
+                        '': string
+                    current_index: 0
+                    total_records: 0
+                    response_message: string
+                    status: string
+                    total_pages: 0
       operationId: get-sensor
       parameters:
         - schema:
@@ -297,7 +325,127 @@ paths:
             type: string
           in: query
           name: asset-id
-          description: Pass this parameter to fetch sensor records associated with this gateway id (imei)
+          description: 'Pass this parameter to fetch sensor records associated with this asset id '
+    post:
+      summary: ''
+      operationId: post-sensor
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                sensor_id:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                mac_address:
+                  type: string
+                  minLength: 1
+                status:
+                  type: string
+                  minLength: 1
+                name:
+                  type: string
+                  minLength: 1
+                product:
+                  type: object
+                  properties:
+                    product_code:
+                      type: string
+                      minLength: 1
+                    product_name:
+                      type: string
+                      minLength: 1
+                    type:
+                      type: string
+                      minLength: 1
+                    manufacturer:
+                      type: object
+                      properties:
+                        orgnisation_id:
+                          type: string
+                          minLength: 1
+                        orgnisation_name:
+                          type: string
+                          minLength: 1
+                        account_number:
+                          type: string
+                          minLength: 1
+                        type:
+                          type: string
+                          minLength: 1
+                      required:
+                        - orgnisation_id
+                        - orgnisation_name
+                        - account_number
+                        - type
+                  required:
+                    - product_code
+                    - product_name
+                    - type
+                    - manufacturer
+                manufacturer:
+                  type: object
+                  properties:
+                    orgnisation_id:
+                      type: string
+                      minLength: 1
+                    orgnisation_name:
+                      type: string
+                      minLength: 1
+                    account_number:
+                      type: string
+                      minLength: 1
+                    type:
+                      type: string
+                      minLength: 1
+                  required:
+                    - orgnisation_id
+                    - orgnisation_name
+                    - account_number
+                    - type
+                '':
+                  type: string
+                  minLength: 1
+              required:
+                - sensor_id
+                - type
+                - mac_address
+                - status
+                - name
+                - product
+                - manufacturer
+                - ''
+              x-examples:
+                example-1:
+                  sensor_id: string
+                  type: string
+                  mac_address: string
+                  status: string
+                  name: string
+                  product:
+                    product_code: string
+                    product_name: string
+                    type: string
+                    manufacturer:
+                      orgnisation_id: string
+                      orgnisation_name: string
+                      account_number: string
+                      type: string
+                  manufacturer:
+                    orgnisation_id: string
+                    orgnisation_name: string
+                    account_number: string
+                    type: string
+                  '': string
+      description: Add a sensor
   /asset:
     post:
       summary: ''
@@ -330,6 +478,7 @@ paths:
                   gateway_id: string
                   asset_id: string
                   event_datetime: string
+      description: Add an asset.
     parameters: []
     get:
       summary: ''
@@ -400,6 +549,64 @@ paths:
                     response_message: string
                     status: string
                     total_pages: 0
+                example-2:
+                  value:
+                    body:
+                      - asset_id: string
+                        assigned_name: string
+                        category: string
+                        comment: string
+                        manufacturer:
+                          orgnisation_id: string
+                          orgnisation_name: string
+                          account_number: string
+                          type: string
+                        status: string
+                        vin: string
+                        vin_validated: true
+                        year: string
+                        owner:
+                          orgnisation_id: string
+                          orgnisation_name: string
+                          account_number: string
+                          type: string
+                    current_index: 0
+                    total_records: 0
+                    response_message: string
+                    status: string
+                    total_pages: 0
+      description: |-
+        Returns the list of Assets.
+
+        Open ended queries will pull assets(based on the data you are authorized to see).
+
+        For further filtering, you can pass in a query method and provide the appropriate parameters. See specific instructions in the appropriate fields.   
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: asset-id
+          description: Pass this parameter to fetch asset for an asset id
+        - schema:
+            type: string
+          in: query
+          name: gateway-id
+          description: Pass this parameter to fetch asset associated with a gateway
+        - schema:
+            type: string
+          in: query
+          name: owner-id
+          description: Pass this parameter to fetch the assets belonging to an organisation
+        - schema:
+            type: string
+          in: query
+          description: Number of records per page returned.  Default is 2000
+          name: result-per-page
+        - schema:
+            type: string
+          in: query
+          name: page-index
+          description: 'For a multi-page query, returns the specified page (from 1 to total_pages) '
   /gateway/assign-to-asset:
     post:
       summary: ''
@@ -418,6 +625,29 @@ paths:
                 value: {}
               example-2:
                 value: {}
+          application/xml:
+            schema:
+              description: ''
+              type: object
+              properties:
+                gateway_id:
+                  type: string
+                  minLength: 1
+                asset_id:
+                  type: string
+                  minLength: 1
+                event_datetime:
+                  type: string
+                  minLength: 1
+              required:
+                - gateway_id
+                - asset_id
+                - event_datetime
+              x-examples:
+                example-1:
+                  gateway_id: string
+                  asset_id: string
+                  event_datetime: string
     parameters: []
   /gateway/reassign-to-asset:
     post:
@@ -430,8 +660,32 @@ paths:
         content:
           application/json:
             schema:
+              description: ''
               type: object
-              properties: {}
+              properties:
+                gateway_id:
+                  type: string
+                  minLength: 1
+                old_asset_id:
+                  type: string
+                  minLength: 1
+                new_asset_id:
+                  type: string
+                  minLength: 1
+                event_datetime:
+                  type: string
+                  minLength: 1
+              required:
+                - gateway_id
+                - old_asset_id
+                - new_asset_id
+                - event_datetime
+              x-examples:
+                example-1:
+                  gateway_id: string
+                  old_asset_id: string
+                  new_asset_id: string
+                  event_datetime: string
     parameters: []
   /gateway/unassign-asset:
     post:
@@ -449,8 +703,33 @@ paths:
         content:
           application/json:
             schema:
+              description: ''
               type: object
-              properties: {}
+              properties:
+                gateway_id:
+                  type: string
+                  minLength: 1
+                asset_id:
+                  type: string
+                  minLength: 1
+                event_datetime:
+                  type: string
+                  minLength: 1
+              required:
+                - gateway_id
+                - asset_id
+                - event_datetime
+              x-examples:
+                example-1:
+                  gateway_id: string
+                  asset_id: string
+                  event_datetime: string
+            examples:
+              example-1:
+                value:
+                  gateway_id: string
+                  asset_id: string
+                  event_datetime: string
     parameters: []
   /sensor/assign-to-gateway:
     post:
@@ -459,6 +738,42 @@ paths:
       responses:
         '200':
           description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              description: ''
+              minItems: 1
+              uniqueItems: true
+              items:
+                type: object
+                required:
+                  - gateway_id
+                  - sensor_id
+                  - event_datetime
+                properties:
+                  gateway_id:
+                    type: string
+                    minLength: 1
+                  sensor_id:
+                    type: string
+                    minLength: 1
+                  event_datetime:
+                    type: string
+                    minLength: 1
+              x-examples:
+                example-1:
+                  - gateway_id: string
+                    sensor_id: string
+                    event_datetime: string
+            examples:
+              example-1:
+                value:
+                  - gateway_id: string
+                    sensor_id: string
+                    event_datetime: string
+        description: ''
 components:
   schemas:
     gateway:
