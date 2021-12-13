@@ -39,21 +39,29 @@ paths:
                   value:
                     body:
                       - imei: string
-                        product_code: string
-                        product_name: string
-                        quantity_shipped: string
+                        product:
+                          product_code: string
+                          product_name: string
+                          type: string
+                          manufacturer:
+                            orgnisation_id: string
+                            orgnisation_name: string
+                            account_number: string
+                            type: string
                         app_version: string
                         mcu_version: string
                         bin_version: string
                         ble_version: string
-                        other1_version: string
-                        other2_version: string
                         config1: string
                         config2: string
                         config3: string
                         config4: string
+                        config1crc: string
+                        config2crc: string
+                        config3crc: string
+                        config4crc: string
                         epicor_order_number: string
-                        can: string
+                        customer_account_number: string
                         son: string
                         cellular: string
                         uuid: string
@@ -68,118 +76,40 @@ paths:
                             mac_address: string
                             status: string
                             name: string
-                            product_code: string
-                            product_name: string
+                            product:
+                              product_code: string
+                              product_name: string
+                              type: string
+                              manufacturer:
+                                orgnisation_id: string
+                                orgnisation_name: string
+                                account_number: string
+                                type: string
+                            manufacturer:
+                              orgnisation_id: string
+                              orgnisation_name: string
+                              account_number: string
+                              type: string
+                            '': string
                         asset:
                           asset_id: string
                           assigned_name: string
                           category: string
                           comment: string
-                          manufacturer: string
-                          status: string
-                          vin: string
-                          vin_validated: true
-                          year: string
-                    current_index: 0
-                    total_records: 0
-                    response_message: string
-                    status: string
-                    total_pages: 0
-                example-2:
-                  value:
-                    body:
-                      - imei: string
-                        product_code: string
-                        product_name: string
-                        quantity_shipped: string
-                        app_version: string
-                        mcu_version: string
-                        bin_version: string
-                        ble_version: string
-                        other1_version: string
-                        other2_version: string
-                        config1: string
-                        config2: string
-                        config3: string
-                        config4: string
-                        epicor_order_number: string
-                        can: string
-                        son: string
-                        cellular: string
-                        uuid: string
-                        iccid: string
-                        imsi: string
-                        carrier_id: string
-                        country_code: string
-                        phone_number: string
-                        sensors:
-                          - sensor_id: string
+                          manufacturer:
+                            orgnisation_id: string
+                            orgnisation_name: string
+                            account_number: string
                             type: string
-                            mac_address: string
-                            status: string
-                            name: string
-                            product_code: string
-                            product_name: string
-                        asset:
-                          asset_id: string
-                          assigned_name: string
-                          category: string
-                          comment: string
-                          manufacturer: string
                           status: string
                           vin: string
                           vin_validated: true
                           year: string
-                    current_index: 0
-                    total_records: 0
-                    response_message: string
-                    status: string
-                    total_pages: 0
-                example-3:
-                  value:
-                    body:
-                      - imei: string
-                        product_code: string
-                        product_name: string
-                        quantity_shipped: string
-                        app_version: string
-                        mcu_version: string
-                        bin_version: string
-                        ble_version: string
-                        other1_version: string
-                        other2_version: string
-                        config1: string
-                        config2: string
-                        config3: string
-                        config4: string
-                        epicor_order_number: string
-                        can: string
-                        son: string
-                        cellular: string
-                        uuid: string
-                        iccid: string
-                        imsi: string
-                        carrier_id: string
-                        country_code: string
-                        phone_number: string
-                        sensors:
-                          - sensor_id: string
+                          owner:
+                            orgnisation_id: string
+                            orgnisation_name: string
+                            account_number: string
                             type: string
-                            mac_address: string
-                            status: string
-                            name: string
-                            product_code: string
-                            product_name: string
-                        asset:
-                          asset_id: string
-                          assigned_name: string
-                          category: string
-                          comment: string
-                          manufacturer: string
-                          status: string
-                          vin: string
-                          vin_validated: true
-                          year: string
                     current_index: 0
                     total_records: 0
                     response_message: string
@@ -205,7 +135,7 @@ paths:
             type: string
           in: query
           name: customer_account_number
-          description: passing this parameter will fetch gateway records for a customer account number
+          description: Pass this parameter to fetch gateway records for a customer account number
         - schema:
             type: integer
           in: query
@@ -220,22 +150,82 @@ paths:
             type: string
           in: query
           name: gateway-id
-          description: required to search by getway-id(imei)
+          description: Pass this parameter to fetch gateway record associated with this gateway id (imei)
         - schema:
             type: string
           in: query
           name: asset-id
+          description: Pass this parameter to fetch gateway record associated with this asset
       x-internal: false
     post:
       summary: ''
-      operationId: post-gateway
+      operationId: gateways
       responses:
         '200':
           description: OK
-      description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                example-1:
+                  value: {}
+      description: Add a new gateway with sensor(optional) and asset(optional)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/gateway'
+            examples:
+              example-1:
+                value:
+                  imei: string
+                  product_code: string
+                  product_name: string
+                  app_version: string
+                  mcu_version: string
+                  bin_version: string
+                  ble_version: string
+                  config1: string
+                  config2: string
+                  config3: string
+                  config4: string
+                  config1crc: string
+                  config2crc: string
+                  config3crc: string
+                  config4crc: string
+                  epicor_order_number: string
+                  customer_account_number: string
+                  son: string
+                  cellular: string
+                  uuid: string
+                  iccid: string
+                  imsi: string
+                  carrier_id: string
+                  country_code: string
+                  phone_number: string
+                  sensors:
+                    - sensor_id: string
+                      type: string
+                      mac_address: string
+                      status: string
+                      name: string
+                      product_code: string
+                      product_name: string
+                  asset:
+                    asset_id: string
+                    assigned_name: string
+                    category: string
+                    comment: string
+                    manufacturer: string
+                    status: string
+                    vin: string
+                    vin_validated: true
+                    year: string
   /sensor:
     get:
-      summary: get list of sensor
+      summary: get list of sensors
       tags: []
       responses:
         '200':
@@ -280,74 +270,34 @@ paths:
                   - response_message
                   - status
                   - total_pages
-              examples:
-                example-1:
-                  value:
-                    body:
-                      - sensor_id: string
-                        type: string
-                        mac_address: string
-                        status: string
-                        name: string
-                        product_code: string
-                        product_name: string
-                    current_index: 0
-                    total_records: 0
-                    response_message: string
-                    status: string
-                    total_pages: 0
-                example-2:
-                  value:
-                    body:
-                      - sensor_id: string
-                        type: string
-                        mac_address: string
-                        status: string
-                        name: string
-                        product_code: string
-                        product_name: string
-                    current_index: 0
-                    total_records: 0
-                    response_message: string
-                    status: string
-                    total_pages: 0
-                example-3:
-                  value:
-                    body:
-                      - sensor_id: string
-                        type: string
-                        mac_address: string
-                        status: string
-                        name: string
-                        product_code: string
-                        product_name: string
-                    current_index: 0
-                    total_records: 0
-                    response_message: string
-                    status: string
-                    total_pages: 0
+              examples: {}
       operationId: get-sensor
       parameters:
         - schema:
             type: integer
           in: query
           name: page-index
+          description: 'For a multi-page query, returns the specified page (from 1 to total_pages) '
         - schema:
             type: integer
           in: query
           name: results-per-page
+          description: Number of records per page returned.  Default is 2000
         - schema:
             type: string
           in: query
           name: gateway-id
+          description: Pass this parameter to fetch sensor records associated with this gateway id (imei)
         - schema:
             type: string
           in: query
           name: sensor-id
+          description: Pass this parameter to fetch sensor record associated with this gateway id (imei)
         - schema:
             type: string
           in: query
           name: asset-id
+          description: Pass this parameter to fetch sensor records associated with this gateway id (imei)
   /asset:
     post:
       summary: ''
@@ -450,7 +400,7 @@ paths:
                     response_message: string
                     status: string
                     total_pages: 0
-  /asset/assign:
+  /gateway/assign-to-asset:
     post:
       summary: ''
       operationId: post-asset-assign
@@ -463,7 +413,13 @@ paths:
             schema:
               type: object
               properties: {}
-  /asset/reassign:
+            examples:
+              example-1:
+                value: {}
+              example-2:
+                value: {}
+    parameters: []
+  /gateway/reassign-to-asset:
     post:
       summary: ''
       operationId: post-asset-reassign
@@ -476,7 +432,8 @@ paths:
             schema:
               type: object
               properties: {}
-  /asset/unassign:
+    parameters: []
+  /gateway/unassign-asset:
     post:
       summary: ''
       operationId: post-asset-unassign
@@ -488,6 +445,20 @@ paths:
               schema:
                 type: object
                 properties: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+    parameters: []
+  /sensor/assign-to-gateway:
+    post:
+      summary: ''
+      operationId: post-sensor-assign-to-gateway
+      responses:
+        '200':
+          description: OK
 components:
   schemas:
     gateway:
@@ -498,19 +469,20 @@ components:
           imei: string
           product_code: string
           product_name: string
-          quantity_shipped: string
           app_version: string
           mcu_version: string
           bin_version: string
           ble_version: string
-          other1_version: string
-          other2_version: string
           config1: string
           config2: string
           config3: string
           config4: string
+          config1crc: string
+          config2crc: string
+          config3crc: string
+          config4crc: string
           epicor_order_number: string
-          can: string
+          customer_account_number: string
           son: string
           cellular: string
           uuid: string
@@ -519,19 +491,31 @@ components:
           carrier_id: string
           country_code: string
           phone_number: string
+          sensors:
+            - sensor_id: string
+              type: string
+              mac_address: string
+              status: string
+              name: string
+              product_code: string
+              product_name: string
+          asset:
+            asset_id: string
+            assigned_name: string
+            category: string
+            comment: string
+            manufacturer: string
+            status: string
+            vin: string
+            vin_validated: true
+            year: string
+      examples: []
       properties:
         imei:
           type: string
           minLength: 1
-        product_code:
-          type: string
-          minLength: 1
-        product_name:
-          type: string
-          minLength: 1
-        quantity_shipped:
-          type: string
-          minLength: 1
+        product:
+          $ref: '#/components/schemas/product'
         app_version:
           type: string
           minLength: 1
@@ -542,12 +526,6 @@ components:
           type: string
           minLength: 1
         ble_version:
-          type: string
-          minLength: 1
-        other1_version:
-          type: string
-          minLength: 1
-        other2_version:
           type: string
           minLength: 1
         config1:
@@ -562,10 +540,22 @@ components:
         config4:
           type: string
           minLength: 1
+        config1crc:
+          type: string
+          minLength: 1
+        config2crc:
+          type: string
+          minLength: 1
+        config3crc:
+          type: string
+          minLength: 1
+        config4crc:
+          type: string
+          minLength: 1
         epicor_order_number:
           type: string
           minLength: 1
-        can:
+        customer_account_number:
           type: string
           minLength: 1
         son:
@@ -594,27 +584,29 @@ components:
           minLength: 1
         sensors:
           type: array
+          uniqueItems: true
+          minItems: 1
           items:
             $ref: '#/components/schemas/sensor'
         asset:
           $ref: '#/components/schemas/asset'
       required:
         - imei
-        - product_code
-        - product_name
-        - quantity_shipped
+        - product
         - app_version
         - mcu_version
         - bin_version
         - ble_version
-        - other1_version
-        - other2_version
         - config1
         - config2
         - config3
         - config4
+        - config1crc
+        - config2crc
+        - config3crc
+        - config4crc
         - epicor_order_number
-        - can
+        - customer_account_number
         - son
         - cellular
         - uuid
@@ -623,52 +615,41 @@ components:
         - carrier_id
         - country_code
         - phone_number
-      examples:
-        - imei: string
-          product_code: string
-          product_name: string
-          quantity_shipped: string
-          app_version: string
-          mcu_version: string
-          bin_version: string
-          ble_version: string
-          other1_version: string
-          other2_version: string
-          config1: string
-          config2: string
-          config3: string
-          config4: string
-          epicor_order_number: string
-          can: string
-          son: string
-          cellular: string
-          uuid: string
-          iccid: string
-          imsi: string
-          carrier_id: string
-          country_code: string
-          phone_number: string
-          sensors:
-            - sensor_id: string
-              type: string
-              mac_address: string
-              status: string
-              name: string
-              product_code: string
-              product_name: string
-          asset:
-            asset_id: string
-            assigned_name: string
-            category: string
-            comment: string
-            manufacturer: string
-            status: string
-            vin: string
-            vin_validated: true
-            year: string
+        - sensors
+        - asset
     sensor:
       description: ''
       type: object
+      x-examples:
+        example-1:
+          sensor_id: string
+          type: string
+          mac_address: string
+          status: string
+          name: string
+          product_code: string
+          product_name: string
+      examples:
+        - sensor_id: string
+          type: string
+          mac_address: string
+          status: string
+          name: string
+          product:
+            product_code: string
+            product_name: string
+            type: string
+            manufacturer:
+              orgnisation_id: string
+              orgnisation_name: string
+              account_number: string
+              type: string
+          manufacturer:
+            orgnisation_id: string
+            orgnisation_name: string
+            account_number: string
+            type: string
+          '': string
       properties:
         sensor_id:
           type: string
@@ -685,37 +666,19 @@ components:
         name:
           type: string
           minLength: 1
-        product_code:
+        product:
+          $ref: '#/components/schemas/product'
+        manufacturer:
+          $ref: '#/components/schemas/organization'
+        '':
           type: string
-          minLength: 1
-        product_name:
-          type: string
-          minLength: 1
       required:
         - sensor_id
         - type
         - mac_address
         - status
         - name
-        - product_code
-        - product_name
-      x-examples:
-        example-1:
-          sensor_id: string
-          type: string
-          mac_address: string
-          status: string
-          name: string
-          product_code: string
-          product_name: string
-      examples:
-        - sensor_id: string
-          type: string
-          mac_address: string
-          status: string
-          name: string
-          product_code: string
-          product_name: string
+        - product
     asset:
       description: ''
       type: object
@@ -735,10 +698,20 @@ components:
           assigned_name: string
           category: string
           comment: string
-          manufacturer: string
+          manufacturer:
+            orgnisation_id: string
+            orgnisation_name: string
+            account_number: string
+            type: string
           status: string
           vin: string
+          vin_validated: true
           year: string
+          owner:
+            orgnisation_id: string
+            orgnisation_name: string
+            account_number: string
+            type: string
       properties:
         asset_id:
           type: string
@@ -764,6 +737,8 @@ components:
         year:
           type: string
           minLength: 1
+        owner:
+          $ref: '#/components/schemas/organization'
       required:
         - asset_id
         - assigned_name

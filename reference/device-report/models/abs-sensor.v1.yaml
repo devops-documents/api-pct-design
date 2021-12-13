@@ -40,3 +40,15 @@ properties:
           type: string
 required:
   - type
+examples:
+  - type: ABS
+    condition: healthy
+    odometer: 0
+    VIN: string
+    voltage: '11.23'
+    faults:
+      - SID: string
+        is_active: true
+        count: 0
+        FMI_code: string
+        FMI_description: string

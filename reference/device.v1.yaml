@@ -38,6 +38,109 @@ paths:
                     type: string
                   status:
                     type: boolean
+              examples:
+                example-1:
+                  value:
+                    body:
+                      - gateway_id: string
+                        asset_id: string
+                        vin: string
+                        report_number: 0
+                        event_datetime: '2012-04-21T18:25:43Z'
+                        event_name: string
+                        server_datetime: string
+                        gateway_number: 0
+                        summary:
+                          latitude: '33.628342'
+                          longitude: '-117.927933'
+                          location_datetime: string
+                          speed: '80.1'
+                          heading: 0
+                          current_power_source: battery
+                          internal_temperature: 0
+                          is_trip: true
+                          odometer: 0
+                          ambient_temperature: 0
+                        internal_sensors:
+                          - type: gps-sensor
+                            latitude: '33.628342'
+                            longitude: '-117.927933'
+                            measurement_datetime: '2012-04-21T18:25:43Z'
+                            speed: 0
+                            HDOP: 1.6
+                            satellite_count: 0
+                            gps_accuracy: 2.3
+                        peripheral_sensors:
+                          - type: ABS
+                            condition: healthy
+                            odometer: 0
+                            VIN: string
+                            voltage: '11.23'
+                            faults:
+                              - SID: string
+                                is_active: true
+                                count: 0
+                                FMI_code: string
+                                FMI_description: string
+                        debug_number: 0
+                        gateway_sequence: 0
+                        version: string
+                    total_reports: 0
+                    current_page: 0
+                    total_pages: 0
+                    response_message: string
+                    status: true
+                example-2:
+                  value:
+                    body:
+                      - gateway_id: string
+                        asset_id: string
+                        vin: string
+                        report_number: 0
+                        event_datetime: '2012-04-21T18:25:43Z'
+                        event_name: string
+                        server_datetime: string
+                        gateway_number: 0
+                        summary:
+                          latitude: '33.628342'
+                          longitude: '-117.927933'
+                          location_datetime: string
+                          speed: '80.1'
+                          heading: 0
+                          current_power_source: battery
+                          internal_temperature: 0
+                          is_trip: true
+                          odometer: 0
+                          ambient_temperature: 0
+                        internal_sensors:
+                          - type: gps-sensor
+                            latitude: '33.628342'
+                            longitude: '-117.927933'
+                            measurement_datetime: '2012-04-21T18:25:43Z'
+                            speed: 0
+                            HDOP: 1.6
+                            satellite_count: 0
+                            gps_accuracy: 2.3
+                        peripheral_sensors:
+                          - type: ABS
+                            condition: healthy
+                            odometer: 0
+                            VIN: string
+                            voltage: '11.23'
+                            faults:
+                              - SID: string
+                                is_active: true
+                                count: 0
+                                FMI_code: string
+                                FMI_description: string
+                        debug_number: 0
+                        gateway_sequence: 0
+                        version: string
+                    total_reports: 0
+                    current_page: 0
+                    total_pages: 0
+                    response_message: string
+                    status: true
             multipart/form-data:
               schema:
                 type: object
@@ -78,14 +181,7 @@ paths:
               - LATEST
           in: query
           name: query-method
-          description: |
-            Indicates how to query the server
-
-            REPORT-NUMBER is a sequential number assigned for each report that is generated across all customer devices
-
-            GATEWAY_NUMBER is a sequential number assigned for each report that is generated per customer device
-
-            DATETIME is the datetime of when the report is received by the PCT server
+          description: Indicates how to query the server REPORT-NUMBER is a sequential number assigned for each report that is generated across all customer devicesGATEWAY_NUMBER is a sequential number assigned for each report that is generated per customer deviceDATETIME is the datetime of when the report is received by the PCT server
         - schema:
             type: string
           in: query
@@ -171,6 +267,17 @@ paths:
                 event_datetime:
                   type: string
                   description: Time that the gateway was associated to the gateway
+            examples:
+              example-1:
+                value:
+                  gateway_id: string
+                  asset_id: string
+                  event_datetime: string
+              example-2:
+                value:
+                  gateway_id: string
+                  asset_id: string
+                  event_datetime: string
         description: Associate an asset to a gateway
       x-internal: true
     parameters: []
@@ -197,6 +304,19 @@ paths:
                   type: string
                 event_datetime:
                   type: string
+            examples:
+              example-1:
+                value:
+                  gateway_id: string
+                  old_asset_id: string
+                  new_asset_id: string
+                  event_datetime: string
+              example-2:
+                value:
+                  gateway_id: string
+                  old_asset_id: string
+                  new_asset_id: string
+                  event_datetime: string
         description: Move the gateway to a new asset
       description: Called when the gateway is moved to a different asset
       x-internal: true
@@ -222,6 +342,12 @@ paths:
                   type: string
                 event_datetime:
                   type: string
+            examples:
+              example-1:
+                value:
+                  gateway_id: string
+                  asset_id: string
+                  event_datetime: string
         description: Dissociate the asset from a gateway
       description: Called when the gateway is uninstalled on an asset
       x-internal: true

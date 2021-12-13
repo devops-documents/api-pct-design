@@ -123,3 +123,90 @@ required:
   - gateway_number
   - summary
   - version
+examples:
+  - gateway_id: string
+    asset_id: string
+    vin: string
+    report_number: 0
+    event_datetime: '2012-04-21T18:25:43Z'
+    event_name: string
+    server_datetime: string
+    gateway_number: 0
+    summary:
+      latitude: '33.628342'
+      longitude: '-117.927933'
+      location_datetime: string
+      speed: '80.1'
+      heading: 0
+      current_power_source: battery
+      internal_temperature: 0
+      is_trip: true
+      odometer: 0
+      ambient_temperature: 0
+    internal_sensors:
+      - type: gps-sensor
+        latitude: '33.628342'
+        longitude: '-117.927933'
+        measurement_datetime: '2012-04-21T18:25:43Z'
+        speed: 0
+        HDOP: 1.6
+        satellite_count: 0
+        gps_accuracy: 2.3
+    peripheral_sensors:
+      - type: ABS
+        condition: healthy
+        odometer: 0
+        VIN: string
+        voltage: '11.23'
+        faults:
+          - SID: string
+            is_active: true
+            count: 0
+            FMI_code: string
+            FMI_description: string
+    debug_number: 0
+    gateway_sequence: 0
+    version: string
+  - gateway_id: string
+    asset_id: string
+    vin: string
+    report_number: 0
+    event_datetime: '2012-04-21T18:25:43Z'
+    event_name: string
+    server_datetime: string
+    gateway_number: 0
+    summary:
+      latitude: '33.628342'
+      longitude: '-117.927933'
+      location_datetime: string
+      speed: '80.1'
+      heading: 0
+      current_power_source: battery
+      internal_temperature: 0
+      is_trip: true
+      odometer: 0
+      ambient_temperature: 0
+    internal_sensors:
+      - type: gps-sensor
+        latitude: '33.628342'
+        longitude: '-117.927933'
+        measurement_datetime: '2012-04-21T18:25:43Z'
+        speed: 0
+        HDOP: 1.6
+        satellite_count: 0
+        gps_accuracy: 2.3
+    peripheral_sensors:
+      - type: ABS
+        condition: healthy
+        odometer: 0
+        VIN: string
+        voltage: '11.23'
+        faults:
+          - SID: string
+            is_active: true
+            count: 0
+            FMI_code: string
+            FMI_description: string
+    debug_number: 0
+    gateway_sequence: 0
+    version: string
