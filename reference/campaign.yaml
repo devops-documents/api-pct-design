@@ -150,43 +150,3504 @@ paths:
       description: Create a new user.
 components:
   schemas:
-    User:
-      title: User
-      type: object
+    campaign:
       description: ''
-      examples:
-        - id: 142
-          firstName: Alice
-          lastName: Smith
-          email: alice.smith@gmail.com
-          dateOfBirth: '1997-10-31'
-          emailVerified: true
-          signUpDate: '2019-08-24'
+      type: object
+      x-examples:
+        example-1:
+          body:
+            campaign_id: 4edc78d8-b426-47ed-95ef-dea4d414b53b
+            campaign_name: Z005-15-21W50-03-21W50-04-Smart7P3LG
+            campaign_status: In progress
+            description: Product to X-Config Migration (BIN 1.2.26)
+            version_migration_detail:
+              - step_id: 552
+                from_package:
+                  pacakge_id: 0747a8e2-8d09-4247-a031-bdb234c717fe
+                  package_name: Z005-15-21W50-03-21W50-04-1-4Smart7P3LG
+                  bin_version: 1.2.26_B1
+                  app_version: 2.10.20_B1
+                  mcu_version: 2.3.0_B9
+                  ble_version: 2.0.2_B0
+                  config1: TrailerNet_Sm7LG_20
+                  config2: Empty_01
+                  config3: Eng_Smart7_18
+                  config4: Jersey_Telecom_04
+                  config1_crc: 298d
+                  config2_crc: 66a9
+                  config3_crc: 1ff0
+                  config4_crc: 5d36
+                  is_deleted: false
+                  is_used_in_campaign: true
+                  created_by: Justine Brakefield
+                  updated_by: Justine Brakefield
+                  created_at: '2021-12-10T21:09:28Z'
+                  updated_at: null
+                to_package:
+                  pacakge_id: 1c0d3f98-75a7-458f-8ecb-51976bff9d3b
+                  package_name: Z005-15-21W50-03-21W50-04-2-4Smart7P3LG
+                  bin_version: 1.2.26_B1
+                  app_version: 2.10.20_B1
+                  mcu_version: 2.3.0_B9
+                  ble_version: 2.0.2_B0
+                  config1: TrailerNet_Sm7LG_20
+                  config2: Z005-15_01
+                  config3: Eng_Smart7_18
+                  config4: Jersey_Telecom_04
+                  config1_crc: 298d
+                  config2_crc: eec4
+                  config3_crc: 1ff0
+                  config4_crc: 5d36
+                  is_deleted: false
+                  is_used_in_campaign: true
+                  created_by: Justine Brakefield
+                  updated_by: Justine Brakefield
+                  created_at: '2021-12-10T21:09:28Z'
+                  updated_at: null
+                at_command: 'AT+XUCFG=2,"/update/cfg/Z005-15_01.cfg"'
+                step_order_number: 1
+              - step_id: 553
+                pacakge_id:
+                  uuid: 1c0d3f98-75a7-458f-8ecb-51976bff9d3b
+                  package_name: Z005-15-21W50-03-21W50-04-2-4Smart7P3LG
+                  bin_version: 1.2.26_B1
+                  app_version: 2.10.20_B1
+                  mcu_version: 2.3.0_B9
+                  ble_version: 2.0.2_B0
+                  config1: TrailerNet_Sm7LG_20
+                  config2: Z005-15_01
+                  config3: Eng_Smart7_18
+                  config4: Jersey_Telecom_04
+                  config1_crc: 298d
+                  config2_crc: eec4
+                  config3_crc: 1ff0
+                  config4_crc: 5d36
+                  is_deleted: false
+                  is_used_in_campaign: true
+                  created_by: Justine Brakefield
+                  updated_by: Justine Brakefield
+                  created_at: '2021-12-10T21:09:28Z'
+                  updated_at: null
+                to_package:
+                  pacakge_id: 0d17320f-af2e-400e-80f4-5fe522717bec
+                  package_name: Z005-15-21W50-03-21W50-04-3-4Smart7P3LG
+                  bin_version: 1.2.26_B1
+                  app_version: 2.10.20_B1
+                  mcu_version: 2.3.0_B9
+                  ble_version: 2.0.2_B0
+                  config1: X005_03
+                  config2: Z005-15_01
+                  config3: Eng_Smart7_18
+                  config4: Jersey_Telecom_04
+                  config1_crc: eebc
+                  config2_crc: eec4
+                  config3_crc: 1ff0
+                  config4_crc: 5d36
+                  is_deleted: false
+                  is_used_in_campaign: true
+                  created_by: Justine Brakefield
+                  updated_by: Justine Brakefield
+                  created_at: '2021-12-10T21:09:28Z'
+                  updated_at: null
+                at_command: 'AT+XUCFG=1,"/update/cfg/X005_03.cfg"'
+                step_order_number: 2
+            is_active: true
+            is_pause_execution: true
+            is_imei_for_customer: false
+            created_by: Justine Brakefield
+            updated_by: Justine Brakefield
+            created_at: '2021-12-10T21:19:22Z'
+            updated_at: '2021-12-14T20:29:50Z'
+            customer_name: null
+            no_of_imeis: 68
+            campaign_device_detail:
+              - imei: '015115008661794'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:37'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-10T22:26:34Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-10T22:27:15Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-10T22:27:54Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:23:48.543606'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000031'
+                  device_ID: '015115008661794'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695293'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:38'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T22:37:18Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T22:37:58Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T22:38:40Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 12:19:00.401361'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000037'
+                  device_ID: '015116000695293'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695301'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:34'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 11:57:45.853794'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000043'
+                  device_ID: '015116000695301'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695319'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:37'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 11:58:51.477409'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000049'
+                  device_ID: '015116000695319'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695327'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:14'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T22:12:53Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T22:13:37Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T22:14:17Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 11:59:12.68305'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000055'
+                  device_ID: '015116000695327'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695335'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 11:55'
+                comments: Gateway also part of  Smart7-20W15-02-21W16-03-Smart7TrailerNet-21W07-02-21W27-02-Smart7P3LGTrailerNet-21W28-07-21W29-05-Smart7P3LGTrailerNet-21W27-02-21W28-07-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: Smart7-20W15-02-21W16-03-Smart7
+                    uuid: cc2814aa-920c-49b4-bdfe-d699fea0de3f
+                  - campaing_name: TrailerNet-21W07-02-21W27-02-Smart7P3LG
+                    uuid: cd83ce62-a95f-48ae-94da-9e1b8b5ae6a6
+                  - campaing_name: TrailerNet-21W28-07-21W29-05-Smart7P3LG
+                    uuid: c87c0d51-aae6-4aae-90f2-ece21b191b3d
+                  - campaing_name: TrailerNet-21W27-02-21W28-07-Smart7P3LG
+                    uuid: d45e2e99-8bab-46f6-bfe1-ae424ab015fd
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 12:00:11.507257'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:47.000232'
+                  device_ID: '015116000695335'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695343'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 09:26'
+                comments: Gateway also part of  Smart7-20W15-02-21W16-03-Smart7TrailerNet-21W07-02-21W27-02-Smart7P3LGTrailerNet-21W28-07-21W29-05-Smart7P3LGTrailerNet-21W27-02-21W28-07-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: Smart7-20W15-02-21W16-03-Smart7
+                    uuid: cc2814aa-920c-49b4-bdfe-d699fea0de3f
+                  - campaing_name: TrailerNet-21W07-02-21W27-02-Smart7P3LG
+                    uuid: cd83ce62-a95f-48ae-94da-9e1b8b5ae6a6
+                  - campaing_name: TrailerNet-21W28-07-21W29-05-Smart7P3LG
+                    uuid: c87c0d51-aae6-4aae-90f2-ece21b191b3d
+                  - campaing_name: TrailerNet-21W27-02-21W28-07-Smart7P3LG
+                    uuid: d45e2e99-8bab-46f6-bfe1-ae424ab015fd
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 13:44:33.683666'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:47.000238'
+                  device_ID: '015116000695343'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695368'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 13:41'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 13:47:13.374849'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000061'
+                  device_ID: '015116000695368'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695376'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 09:26'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: ''
+                  config5CRC: '7846'
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 13:51:05.078975'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000067'
+                  device_ID: '015116000695376'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695384'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 07:12'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T03:42:44Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T03:43:25Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T03:44:05Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 13:41:15.80353'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000072'
+                  device_ID: '015116000695384'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695434'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:25'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 13:20:36.270403'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000078'
+                  device_ID: '015116000695434'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695459'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:30'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T01:44:47Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T01:45:28Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T01:46:08Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 13:22:11.017878'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000084'
+                  device_ID: '015116000695459'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695475'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:35'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 13:17:11.999671'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000090'
+                  device_ID: '015116000695475'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695509'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:35'
+                comments: Gateway also part of  Smart7-20W15-02-21W16-03-Smart7TrailerNet-21W07-02-21W27-02-Smart7P3LGTrailerNet-21W28-07-21W29-05-Smart7P3LGTrailerNet-21W27-02-21W28-07-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: Smart7-20W15-02-21W16-03-Smart7
+                    uuid: cc2814aa-920c-49b4-bdfe-d699fea0de3f
+                  - campaing_name: TrailerNet-21W07-02-21W27-02-Smart7P3LG
+                    uuid: cd83ce62-a95f-48ae-94da-9e1b8b5ae6a6
+                  - campaing_name: TrailerNet-21W28-07-21W29-05-Smart7P3LG
+                    uuid: c87c0d51-aae6-4aae-90f2-ece21b191b3d
+                  - campaing_name: TrailerNet-21W27-02-21W28-07-Smart7P3LG
+                    uuid: d45e2e99-8bab-46f6-bfe1-ae424ab015fd
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 12:56:34.462174'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:47.000244'
+                  device_ID: '015116000695509'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695517'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:31'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 12:57:31.814732'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000096'
+                  device_ID: '015116000695517'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695525'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:31'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 12:59:06.330658'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000102'
+                  device_ID: '015116000695525'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695558'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 07:04'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T03:36:04Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T03:36:49Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T03:37:35Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 12:51:00.831224'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-27 13:20:36.000412'
+                  device_ID: '015116000695558'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695582'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:27'
+                comments: Gateway also part of  Smart7-20W15-02-21W16-03-Smart7TrailerNet-21W07-02-21W27-02-Smart7P3LGTrailerNet-21W28-07-21W29-05-Smart7P3LGTrailerNet-21W27-02-21W28-07-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: Smart7-20W15-02-21W16-03-Smart7
+                    uuid: cc2814aa-920c-49b4-bdfe-d699fea0de3f
+                  - campaing_name: TrailerNet-21W07-02-21W27-02-Smart7P3LG
+                    uuid: cd83ce62-a95f-48ae-94da-9e1b8b5ae6a6
+                  - campaing_name: TrailerNet-21W28-07-21W29-05-Smart7P3LG
+                    uuid: c87c0d51-aae6-4aae-90f2-ece21b191b3d
+                  - campaing_name: TrailerNet-21W27-02-21W28-07-Smart7P3LG
+                    uuid: d45e2e99-8bab-46f6-bfe1-ae424ab015fd
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:00:59.984346'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-27 13:21:17.000059'
+                  device_ID: '015116000695582'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695616'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:13'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 14:39:34.431127'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000108'
+                  device_ID: '015116000695616'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695632'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 12:02'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T02:46:01Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T02:46:40Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T02:47:22Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 14:33:00.569972'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:47.000259'
+                  device_ID: '015116000695632'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695640'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 09:40'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 14:34:13.022816'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000117'
+                  device_ID: '015116000695640'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695673'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:35'
+                comments: Gateway also part of  Smart7-20W15-02-21W16-03-Smart7TrailerNet-21W07-02-21W27-02-Smart7P3LGTrailerNet-21W28-07-21W29-05-Smart7P3LGTrailerNet-21W27-02-21W28-07-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: Smart7-20W15-02-21W16-03-Smart7
+                    uuid: cc2814aa-920c-49b4-bdfe-d699fea0de3f
+                  - campaing_name: TrailerNet-21W07-02-21W27-02-Smart7P3LG
+                    uuid: cd83ce62-a95f-48ae-94da-9e1b8b5ae6a6
+                  - campaing_name: TrailerNet-21W28-07-21W29-05-Smart7P3LG
+                    uuid: c87c0d51-aae6-4aae-90f2-ece21b191b3d
+                  - campaing_name: TrailerNet-21W27-02-21W28-07-Smart7P3LG
+                    uuid: d45e2e99-8bab-46f6-bfe1-ae424ab015fd
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 14:27:05.614981'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:47.000265'
+                  device_ID: '015116000695673'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695681'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:34'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 14:28:58.037068'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000128'
+                  device_ID: '015116000695681'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695699'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 12:30'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 14:29:43.50535'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000135'
+                  device_ID: '015116000695699'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695749'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:36'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 13:58:22.880288'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000141'
+                  device_ID: '015116000695749'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695756'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:38'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T22:37:03Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T22:37:43Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T22:38:23Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 13:59:38.347529'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000147'
+                  device_ID: '015116000695756'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695764'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-09-29 21:15'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 14:00:24.106226'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000153'
+                  device_ID: '015116000695764'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695772'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:39'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 14:01:58.269463'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000159'
+                  device_ID: '015116000695772'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695780'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:38'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 13:52:55.059195'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000165'
+                  device_ID: '015116000695780'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695806'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 13:26'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:48:13.244845'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000171'
+                  device_ID: '015116000695806'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695814'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 09:00'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:48:39.617723'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000178'
+                  device_ID: '015116000695814'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695822'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 13:37'
+                comments: Gateway also part of  TrailerNet-21W12-02-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W12-02-21W27-01-Smart7P3LG
+                    uuid: d3e5fc1d-0cd0-4604-95f9-f2b0950e3c16
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:40:43.03337'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000187'
+                  device_ID: '015116000695822'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695830'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:07'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:42:06.322225'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000193'
+                  device_ID: '015116000695830'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695848'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 14:32'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:43:27.76607'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000199'
+                  device_ID: '015116000695848'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695871'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 13:45'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:50:36Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:51:44Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:53:00Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:38:17.065702'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000205'
+                  device_ID: '015116000695871'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695897'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:38'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:49:09Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:49:49Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:50:28Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:40:01.244355'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000211'
+                  device_ID: '015116000695897'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695905'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:20'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:54:11Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:54:51Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:55:33Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:13:49.512988'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000217'
+                  device_ID: '015116000695905'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695913'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 13:53'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T21:53:02Z'
+                  - step_order_number: 2
+                    step_status: In progress
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:16:19.213895'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000223'
+                  device_ID: '015116000695913'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695954'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 12:51'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:50:03Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:50:42Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:51:22Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:09:08.58142'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:47.000271'
+                  device_ID: '015116000695954'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695962'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 11:56'
+                comments: Gateway also part of  Smart7-20W15-02-21W16-03-Smart7TrailerNet-21W07-02-21W27-02-Smart7P3LGTrailerNet-21W28-07-21W29-05-Smart7P3LGTrailerNet-21W27-02-21W28-07-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: Smart7-20W15-02-21W16-03-Smart7
+                    uuid: cc2814aa-920c-49b4-bdfe-d699fea0de3f
+                  - campaing_name: TrailerNet-21W07-02-21W27-02-Smart7P3LG
+                    uuid: cd83ce62-a95f-48ae-94da-9e1b8b5ae6a6
+                  - campaing_name: TrailerNet-21W28-07-21W29-05-Smart7P3LG
+                    uuid: c87c0d51-aae6-4aae-90f2-ece21b191b3d
+                  - campaing_name: TrailerNet-21W27-02-21W28-07-Smart7P3LG
+                    uuid: d45e2e99-8bab-46f6-bfe1-ae424ab015fd
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:11:00.672167'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-27 13:21:17.000099'
+                  device_ID: '015116000695962'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695970'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 13:35'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T21:33:36Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T21:34:26Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T21:35:07Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:12:27.884931'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000229'
+                  device_ID: '015116000695970'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000695996'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:38'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T00:47:57Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T00:48:37Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T00:49:20Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:06:01.705714'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-27 13:20:36.000526'
+                  device_ID: '015116000695996'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696010'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:32'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:48:55Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:49:35Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:50:21Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:52:16.763876'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000238'
+                  device_ID: '015116000696010'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696036'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 13:02'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T21:00:15Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T21:00:55Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T21:02:55Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:46:44.006208'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:47.000277'
+                  device_ID: '015116000696036'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696051'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 12:57'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:55:53Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:56:38Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:57:18Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:48:57.733111'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000245'
+                  device_ID: '015116000696051'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696069'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 13:04'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T21:03:20Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T21:04:00Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T21:04:41Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:49:34.629385'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000252'
+                  device_ID: '015116000696069'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696077'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 06:27'
+                comments: Gateway also part of  TrailerNet-21W12-02-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W12-02-21W27-01-Smart7P3LG
+                    uuid: d3e5fc1d-0cd0-4604-95f9-f2b0950e3c16
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:43:48.040586'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000258'
+                  device_ID: '015116000696077'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696101'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 04:23'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T00:52:56Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T00:53:36Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T00:54:16Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:30:53.81403'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000263'
+                  device_ID: '015116000696101'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696127'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:34'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:51:51Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:52:42Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:53:21Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:25:34.306209'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000269'
+                  device_ID: '015116000696127'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696143'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 12:51'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:49:54Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:50:38Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:51:20Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:27:51.870436'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000275'
+                  device_ID: '015116000696143'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696150'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:37'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:56:12Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:56:54Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:57:51Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:22:02.286405'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000281'
+                  device_ID: '015116000696150'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696168'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:38'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:49:50Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:50:31Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:51:16Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:23:21.817829'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000287'
+                  device_ID: '015116000696168'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696184'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:36'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T01:46:46Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T01:47:28Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T01:48:12Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:24:29.53899'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000293'
+                  device_ID: '015116000696184'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696192'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 13:15'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T21:13:53Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T21:14:33Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T21:15:13Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:17:46.571253'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000299'
+                  device_ID: '015116000696192'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696218'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 13:01'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:59:51Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T21:00:31Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T21:01:11Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 11:55:01.820426'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-27 13:20:36.000591'
+                  device_ID: '015116000696218'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000696234'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 12:12'
+                comments: Gateway also part of  TrailerNet-21W07-01-21W27-01-Smart7P3LGTrailerNet-21W27-01-21W28-06-Smart7P3LGTrailerNet-21W28-06-21W29-04-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+                    uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+                  - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+                    uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+                  - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+                    uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 11:49:21.548205'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000306'
+                  device_ID: '015116000696234'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000896263'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:38'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T01:30:23Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T01:31:08Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T01:31:48Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 16:13:14.080582'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000320'
+                  device_ID: '015116000896263'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116000896271'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 12:58'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:57:34Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:58:14Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:58:55Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 16:14:49.568291'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000326'
+                  device_ID: '015116000896271'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116001790424'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 13:17'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T21:15:49Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T21:16:30Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T21:17:10Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 12:48:01.299733'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:47.000284'
+                  device_ID: '015116001790424'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116002027610'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:38'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:50:32Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:51:12Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:51:55Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 08:15:47.683969'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000338'
+                  device_ID: '015116002027610'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116002029913'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:36'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:50:39Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:51:20Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:52:01Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 13:11:43.976061'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000352'
+                  device_ID: '015116002029913'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116002030267'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:35'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:50:42Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:51:39Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:52:24Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 10:23:26.710656'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000359'
+                  device_ID: '015116002030267'
+                  server_INFO_STR: ' 172.31.73.189 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116002030481'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:38'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:50:46Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:51:26Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:52:06Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 11:17:55.491535'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:47.000302'
+                  device_ID: '015116002030481'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116002031695'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 10:08'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T01:56:53Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T01:57:33Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T01:58:15Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 11:48:57.769466'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:47.000309'
+                  device_ID: '015116002031695'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116002031976'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Eligible
+                last_report: '2021-12-14 08:17'
+                comments: Gateway also part of  Smart7-20W15-02-21W16-03-Smart7TrailerNet-21W07-02-21W27-02-Smart7P3LGTrailerNet-21W28-07-21W29-05-Smart7P3LGTrailerNet-21W27-02-21W28-07-Smart7P3LG
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: Pending
+                  - step_order_number: 2
+                    step_status: Pending
+                  - step_order_number: 3
+                    step_status: Pending
+                campaign_hyper_link:
+                  - campaing_name: Smart7-20W15-02-21W16-03-Smart7
+                    uuid: cc2814aa-920c-49b4-bdfe-d699fea0de3f
+                  - campaing_name: TrailerNet-21W07-02-21W27-02-Smart7P3LG
+                    uuid: cd83ce62-a95f-48ae-94da-9e1b8b5ae6a6
+                  - campaing_name: TrailerNet-21W28-07-21W29-05-Smart7P3LG
+                    uuid: c87c0d51-aae6-4aae-90f2-ece21b191b3d
+                  - campaing_name: TrailerNet-21W27-02-21W28-07-Smart7P3LG
+                    uuid: d45e2e99-8bab-46f6-bfe1-ae424ab015fd
+                device_campaign_history: null
+                device_report:
+                  config1CRC: 298d
+                  config1CIV: TrailerNet_Sm7LG_20
+                  config2CRC: 66a9
+                  config2CIV: Empty_01
+                  config3CRC: 1ff0
+                  config3CIV: Eng_Smart7_18
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 12:34:53.121095'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-27 13:21:17.000177'
+                  device_ID: '015116002031976'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116002032305'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 13:34'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T21:32:45Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T21:33:26Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T21:34:08Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 16:58:34.809178'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:47.000315'
+                  device_ID: '015116002032305'
+                  server_INFO_STR: ' 172.31.64.15 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116002033758'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:38'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:51:10Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:51:51Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:52:32Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 16:30:36.970784'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000368'
+                  device_ID: '015116002033758'
+                  server_INFO_STR: ' 172.31.65.225 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+              - imei: '015116002034731'
+                product_name: freight-lg
+                customer_name: hirschbach motor lines
+                device_status_for_campaign: Completed
+                last_report: '2021-12-14 14:30'
+                comments: null
+                device_step_status:
+                  - step_order_number: 1
+                    step_status: '2021-12-14T20:51:13Z'
+                  - step_order_number: 2
+                    step_status: '2021-12-14T20:51:53Z'
+                  - step_order_number: 3
+                    step_status: '2021-12-14T20:52:34Z'
+                campaign_hyper_link: null
+                device_campaign_history: null
+                device_report:
+                  config1CRC: eebc
+                  config1CIV: X005_03
+                  config2CRC: eec4
+                  config2CIV: Z005-15_01
+                  config3CRC: 66a9
+                  config3CIV: Empty_01
+                  config4CRC: 5d36
+                  config4CIV: Jersey_Telecom_04
+                  config5CIV: null
+                  config5CRC: null
+                  configurationDesc: null
+                  customer: hirschbach motor lines
+                  isDeviceInstalledForCampaign: 'true'
+                  deviceInstalledForCampaignDT: '2021-09-06 15:54:17.680436'
+                  isDeviceUpgradeEligibleForCampaign: 'true'
+                  deviceUpgradeEligibleForCampaignDT: '2021-09-27 13:20:36.000658'
+                  device_ID: '015116002034731'
+                  server_INFO_STR: ' 172.31.67.68 '
+                  extender_VERSION: 2.3.0_B9
+                  baseband_SW_VERSION: 1.2.26_B1
+                  app_SW_VERSION: cutlass-lg2.10.20_B1
+                  report_ID: null
+            campaign_summary:
+              total_gateways: 68
+              not_started: 30
+              in_progress: 1
+              completed: 37
+              on_hold: 0
+              not_eligible: 0
+              off_path: 0
+              on_path: 0
+              base_line_match: 68
+            exclude_not_installed: true
+            exclude_low_battery: false
+            exclude_rma: false
+            exclude_eol: false
+            exclude_engineering: false
+          status: null
+          message: Fetched campaign by uuid
       properties:
-        id:
-          type: integer
-          description: Unique identifier for the given user.
-        firstName:
+        body:
+          type: object
+          required:
+            - campaign_id
+            - campaign_name
+            - campaign_status
+            - description
+            - version_migration_detail
+            - is_active
+            - is_pause_execution
+            - is_imei_for_customer
+            - created_by
+            - updated_by
+            - created_at
+            - updated_at
+            - no_of_imeis
+            - campaign_device_detail
+            - campaign_summary
+            - exclude_not_installed
+            - exclude_low_battery
+            - exclude_rma
+            - exclude_eol
+            - exclude_engineering
+          properties:
+            campaign_id:
+              type: string
+              minLength: 1
+            campaign_name:
+              type: string
+              minLength: 1
+            campaign_status:
+              type: string
+              minLength: 1
+            description:
+              type: string
+              minLength: 1
+            version_migration_detail:
+              type: array
+              uniqueItems: true
+              minItems: 1
+              items:
+                type: object
+                properties:
+                  step_id:
+                    type: number
+                  from_package:
+                    $ref: '#/components/schemas/package'
+                  to_package:
+                    $ref: ./gateway.yaml#/components/schemas/package
+                  at_command:
+                    type: string
+                    minLength: 1
+                  step_order_number:
+                    type: number
+                required:
+                  - step_id
+                  - at_command
+                  - step_order_number
+            is_active:
+              type: boolean
+            is_pause_execution:
+              type: boolean
+            is_imei_for_customer:
+              type: boolean
+            created_by:
+              type: string
+              minLength: 1
+            updated_by:
+              type: string
+              minLength: 1
+            created_at:
+              type: string
+              minLength: 1
+            updated_at:
+              type: string
+              minLength: 1
+            customer_name: {}
+            no_of_imeis:
+              type: number
+            campaign_device_detail:
+              type: array
+              uniqueItems: true
+              minItems: 1
+              items:
+                type: object
+                properties:
+                  imei:
+                    type: string
+                    minLength: 1
+                  product_name:
+                    type: string
+                    minLength: 1
+                  customer_name:
+                    type: string
+                    minLength: 1
+                  device_status_for_campaign:
+                    type: string
+                    minLength: 1
+                  last_report:
+                    type: string
+                    minLength: 1
+                  comments: {}
+                  device_step_status:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      type: object
+                      properties:
+                        step_order_number:
+                          type: number
+                        step_status:
+                          type: string
+                          minLength: 1
+                      required:
+                        - step_order_number
+                        - step_status
+                  campaign_hyper_link: {}
+                  device_campaign_history: {}
+                  device_report:
+                    type: object
+                    properties:
+                      config1CRC:
+                        type: string
+                        minLength: 1
+                      config1CIV:
+                        type: string
+                        minLength: 1
+                      config2CRC:
+                        type: string
+                        minLength: 1
+                      config2CIV:
+                        type: string
+                        minLength: 1
+                      config3CRC:
+                        type: string
+                        minLength: 1
+                      config3CIV:
+                        type: string
+                        minLength: 1
+                      config4CRC:
+                        type: string
+                        minLength: 1
+                      config4CIV:
+                        type: string
+                        minLength: 1
+                      config5CIV: {}
+                      config5CRC: {}
+                      configurationDesc: {}
+                      customer:
+                        type: string
+                        minLength: 1
+                      isDeviceInstalledForCampaign:
+                        type: string
+                        minLength: 1
+                      deviceInstalledForCampaignDT:
+                        type: string
+                        minLength: 1
+                      isDeviceUpgradeEligibleForCampaign:
+                        type: string
+                        minLength: 1
+                      deviceUpgradeEligibleForCampaignDT:
+                        type: string
+                        minLength: 1
+                      device_ID:
+                        type: string
+                        minLength: 1
+                      server_INFO_STR:
+                        type: string
+                        minLength: 1
+                      extender_VERSION:
+                        type: string
+                        minLength: 1
+                      baseband_SW_VERSION:
+                        type: string
+                        minLength: 1
+                      app_SW_VERSION:
+                        type: string
+                        minLength: 1
+                      report_ID: {}
+                    required:
+                      - config1CRC
+                      - config1CIV
+                      - config2CRC
+                      - config2CIV
+                      - config3CRC
+                      - config3CIV
+                      - config4CRC
+                      - config4CIV
+                      - customer
+                      - isDeviceInstalledForCampaign
+                      - deviceInstalledForCampaignDT
+                      - isDeviceUpgradeEligibleForCampaign
+                      - deviceUpgradeEligibleForCampaignDT
+                      - device_ID
+                      - server_INFO_STR
+                      - extender_VERSION
+                      - baseband_SW_VERSION
+                      - app_SW_VERSION
+                required:
+                  - imei
+                  - product_name
+                  - customer_name
+                  - device_status_for_campaign
+                  - last_report
+            campaign_summary:
+              type: object
+              required:
+                - total_gateways
+                - not_started
+                - in_progress
+                - completed
+                - on_hold
+                - not_eligible
+                - off_path
+                - on_path
+                - base_line_match
+              properties:
+                total_gateways:
+                  type: number
+                not_started:
+                  type: number
+                in_progress:
+                  type: number
+                completed:
+                  type: number
+                on_hold:
+                  type: number
+                not_eligible:
+                  type: number
+                off_path:
+                  type: number
+                on_path:
+                  type: number
+                base_line_match:
+                  type: number
+            exclude_not_installed:
+              type: boolean
+            exclude_low_battery:
+              type: boolean
+            exclude_rma:
+              type: boolean
+            exclude_eol:
+              type: boolean
+            exclude_engineering:
+              type: boolean
+        status: {}
+        message:
           type: string
-        lastName:
-          type: string
-        email:
-          type: string
-          format: email
-        dateOfBirth:
-          type: string
-          format: date
-          example: '1997-10-31'
-        emailVerified:
-          type: boolean
-          description: Set to true if the user's email has been verified.
-        createDate:
-          type: string
-          format: date
-          description: The date that the user was created.
+          minLength: 1
       required:
-        - id
-        - firstName
-        - lastName
-        - email
-        - emailVerified
+        - body
+        - message
+    package:
+      description: ''
+      type: object
+      properties:
+        pacakge_id:
+          type: string
+          minLength: 1
+        package_name:
+          type: string
+          minLength: 1
+        bin_version:
+          type: string
+          minLength: 1
+        app_version:
+          type: string
+          minLength: 1
+        mcu_version:
+          type: string
+          minLength: 1
+        ble_version:
+          type: string
+          minLength: 1
+        config1:
+          type: string
+          minLength: 1
+        config2:
+          type: string
+          minLength: 1
+        config3:
+          type: string
+          minLength: 1
+        config4:
+          type: string
+          minLength: 1
+        config1_crc:
+          type: string
+          minLength: 1
+        config2_crc:
+          type: string
+          minLength: 1
+        config3_crc:
+          type: string
+          minLength: 1
+        config4_crc:
+          type: string
+          minLength: 1
+        is_deleted:
+          type: boolean
+        is_used_in_campaign:
+          type: boolean
+        created_by:
+          type: string
+          minLength: 1
+        updated_by:
+          type: string
+          minLength: 1
+        created_at:
+          type: string
+          minLength: 1
+        updated_at: {}
+      required:
+        - pacakge_id
+        - package_name
+        - bin_version
+        - app_version
+        - mcu_version
+        - ble_version
+        - config1
+        - config2
+        - config3
+        - config4
+        - config1_crc
+        - config2_crc
+        - config3_crc
+        - config4_crc
+        - is_deleted
+        - is_used_in_campaign
+        - created_by
+        - updated_by
+        - created_at
+      x-examples:
+        example-1:
+          pacakge_id: 0747a8e2-8d09-4247-a031-bdb234c717fe
+          package_name: Z005-15-21W50-03-21W50-04-1-4Smart7P3LG
+          bin_version: 1.2.26_B1
+          app_version: 2.10.20_B1
+          mcu_version: 2.3.0_B9
+          ble_version: 2.0.2_B0
+          config1: TrailerNet_Sm7LG_20
+          config2: Empty_01
+          config3: Eng_Smart7_18
+          config4: Jersey_Telecom_04
+          config1_crc: 298d
+          config2_crc: 66a9
+          config3_crc: 1ff0
+          config4_crc: 5d36
+          is_deleted: false
+          is_used_in_campaign: true
+          created_by: Justine Brakefield
+          updated_by: Justine Brakefield
+          created_at: '2021-12-10T21:09:28Z'
+          updated_at: null
+    campaign-gateway:
+      description: ''
+      type: object
+      x-examples:
+        example-1:
+          imei: '015116000695301'
+          product_name: freight-lg
+          customer_name: hirschbach motor lines
+          device_status_for_campaign: Eligible
+          last_report: '2021-12-14 14:34'
+          gateway-campaigns:
+            - TrailerNet-21W07-01-21W27-01-Smart7P3LG
+            - TrailerNet-21W27-01-21W28-06-Smart7P3LG
+            - TrailerNet-21W28-06-21W29-04-Smart7P3LG
+          device_step_status:
+            - step_order_number: 1
+              step_status: Pending
+            - step_order_number: 2
+              step_status: Pending
+            - step_order_number: 3
+              step_status: Pending
+          campaign_hyper_link:
+            - campaing_name: TrailerNet-21W07-01-21W27-01-Smart7P3LG
+              uuid: b9da95f3-4714-4d2c-b072-930fd8a9bb9a
+            - campaing_name: TrailerNet-21W27-01-21W28-06-Smart7P3LG
+              uuid: 76e29c9b-aaf7-4d8f-aff3-0fe120d8d2a6
+            - campaing_name: TrailerNet-21W28-06-21W29-04-Smart7P3LG
+              uuid: 7c56a348-3d24-4137-90fb-cbd3b21aa94e
+          device_campaign_history: null
+          device_report:
+            config1CRC: 298d
+            config1CIV: TrailerNet_Sm7LG_20
+            config2CRC: 66a9
+            config2CIV: Empty_01
+            config3CRC: 1ff0
+            config3CIV: Eng_Smart7_18
+            config4CRC: 5d36
+            config4CIV: Jersey_Telecom_04
+            config5CIV: null
+            config5CRC: null
+            configurationDesc: null
+            customer: hirschbach motor lines
+            isDeviceInstalledForCampaign: 'true'
+            deviceInstalledForCampaignDT: '2021-09-06 11:57:45.853794'
+            isDeviceUpgradeEligibleForCampaign: 'true'
+            deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000043'
+            device_ID: '015116000695301'
+            server_INFO_STR: ' 172.31.65.225 '
+            extender_VERSION: 2.3.0_B9
+            baseband_SW_VERSION: 1.2.26_B1
+            app_SW_VERSION: cutlass-lg2.10.20_B1
+            report_ID: null
+      examples:
+        - imei: string
+          product_name: string
+          customer_name: string
+          device_status_for_campaign: string
+          last_report: string
+          gateway-campaigns:
+            - {}
+          device_step_status:
+            - step_order_number: 0
+              step_status: string
+          device_campaign_history: null
+          device_report:
+            config1CRC: string
+            config1CIV: string
+            config2CRC: string
+            config2CIV: string
+            config3CRC: string
+            config3CIV: string
+            config4CRC: string
+            config4CIV: string
+            config5CIV: null
+            config5CRC: null
+            configurationDesc: null
+            customer: string
+            isDeviceInstalledForCampaign: string
+            deviceInstalledForCampaignDT: string
+            isDeviceUpgradeEligibleForCampaign: string
+            deviceUpgradeEligibleForCampaignDT: string
+            device_ID: string
+            server_INFO_STR: string
+            extender_VERSION: string
+            baseband_SW_VERSION: string
+            app_SW_VERSION: string
+            report_ID: null
+      properties:
+        imei:
+          type: string
+          minLength: 1
+        product_name:
+          type: string
+          minLength: 1
+        customer_name:
+          type: string
+          minLength: 1
+        device_status_for_campaign:
+          type: string
+          minLength: 1
+        last_report:
+          type: string
+          minLength: 1
+        gateway-campaigns:
+          type: array
+          items:
+            type: object
+        device_step_status:
+          type: array
+          uniqueItems: true
+          minItems: 1
+          items:
+            type: object
+            properties:
+              step_order_number:
+                type: number
+              step_status:
+                type: string
+                minLength: 1
+            required:
+              - step_order_number
+              - step_status
+        device_campaign_history: {}
+        device_report:
+          $ref: '#/components/schemas/device-maintenance-report'
+      required:
+        - imei
+        - product_name
+        - customer_name
+        - device_status_for_campaign
+        - last_report
+        - gateway-campaigns
+        - device_step_status
+        - device_report
+    device-maintenance-report:
+      description: ''
+      type: object
+      properties:
+        config1CRC:
+          type: string
+          minLength: 1
+        config1CIV:
+          type: string
+          minLength: 1
+        config2CRC:
+          type: string
+          minLength: 1
+        config2CIV:
+          type: string
+          minLength: 1
+        config3CRC:
+          type: string
+          minLength: 1
+        config3CIV:
+          type: string
+          minLength: 1
+        config4CRC:
+          type: string
+          minLength: 1
+        config4CIV:
+          type: string
+          minLength: 1
+        config5CIV: {}
+        config5CRC: {}
+        configurationDesc: {}
+        customer:
+          type: string
+          minLength: 1
+        isDeviceInstalledForCampaign:
+          type: string
+          minLength: 1
+        deviceInstalledForCampaignDT:
+          type: string
+          minLength: 1
+        isDeviceUpgradeEligibleForCampaign:
+          type: string
+          minLength: 1
+        deviceUpgradeEligibleForCampaignDT:
+          type: string
+          minLength: 1
+        device_ID:
+          type: string
+          minLength: 1
+        server_INFO_STR:
+          type: string
+          minLength: 1
+        extender_VERSION:
+          type: string
+          minLength: 1
+        baseband_SW_VERSION:
+          type: string
+          minLength: 1
+        app_SW_VERSION:
+          type: string
+          minLength: 1
+        report_ID: {}
+      required:
+        - config1CRC
+        - config1CIV
+        - config2CRC
+        - config2CIV
+        - config3CRC
+        - config3CIV
+        - config4CRC
+        - config4CIV
+        - customer
+        - isDeviceInstalledForCampaign
+        - deviceInstalledForCampaignDT
+        - isDeviceUpgradeEligibleForCampaign
+        - deviceUpgradeEligibleForCampaignDT
+        - device_ID
+        - server_INFO_STR
+        - extender_VERSION
+        - baseband_SW_VERSION
+        - app_SW_VERSION
+      x-examples:
+        example-1:
+          config1CRC: eebc
+          config1CIV: X005_03
+          config2CRC: eec4
+          config2CIV: Z005-15_01
+          config3CRC: 66a9
+          config3CIV: Empty_01
+          config4CRC: 5d36
+          config4CIV: Jersey_Telecom_04
+          config5CIV: null
+          config5CRC: null
+          configurationDesc: null
+          customer: hirschbach motor lines
+          isDeviceInstalledForCampaign: 'true'
+          deviceInstalledForCampaignDT: '2021-09-06 12:19:00.401361'
+          isDeviceUpgradeEligibleForCampaign: 'true'
+          deviceUpgradeEligibleForCampaignDT: '2021-09-23 10:45:24.000037'
+          device_ID: '015116000695293'
+          server_INFO_STR: ' 172.31.64.15 '
+          extender_VERSION: 2.3.0_B9
+          baseband_SW_VERSION: 1.2.26_B1
+          app_SW_VERSION: cutlass-lg2.10.20_B1
+          report_ID: null
