@@ -1,5 +1,5 @@
 title: Gateway Report
-description: Standard device report that is generated based on triggered events
+description: '    Standard device report that is generated based on triggered events'
 type: object
 xml:
   name: Reports

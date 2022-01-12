@@ -27,7 +27,7 @@ paths:
                       $ref: ./device-report/models/report.v1.yaml
                   total_reports:
                     type: integer
-                    description: Total number of reports returned
+                    description: Total number of reports that are returned
                   current_page:
                     type: integer
                     description: Current page index
