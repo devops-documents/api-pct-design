@@ -167,7 +167,7 @@ paths:
                     type: integer
                     description: Total number of pages based on the result set
           headers: {}
-      operationId: get-device-report
+      operationId: get-device-report-asc
       parameters:
         - schema:
             type: string
@@ -264,7 +264,7 @@ paths:
                     type: integer
                     description: Total number of pages based on the result set
           headers: {}
-      operationId: get-device-report
+      operationId: get-device-report-wo-pagination
       parameters:
         - schema:
             type: string
