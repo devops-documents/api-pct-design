@@ -100,7 +100,7 @@ paths:
             type: integer
           in: query
           name: results-per-page
-          description: Number of results per page. Default is 1000 records
+          description: Number of results per page. Default is 100 records
         - schema:
             type: integer
           in: query
@@ -206,7 +206,7 @@ paths:
             type: integer
           in: query
           name: results-per-page
-          description: Number of results per page. Default is 1000 records
+          description: Number of results per page. Default is 100 records
         - schema:
             type: integer
           in: query
@@ -296,7 +296,7 @@ paths:
             type: integer
           in: query
           name: max-results
-          description: 'Number of results per page. Default is 1000 records, Max 10000'
+          description: 'Number of results per page. Default is 100 records, Max 10000'
       description: |-
         Returns historical gateway reports. Reports are generated based on PCT event types.
 
