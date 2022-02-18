@@ -1,0 +1,100 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "number_of_files": {
+      "type": "number"
+    },
+    "waterfall_info": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "required": [
+          "config_id",
+          "config_crc",
+          "config_identification_version"
+        ],
+        "properties": {
+          "config_id": {
+            "type": "number"
+          },
+          "config_crc": {
+            "type": "string",
+            "minLength": 1
+          },
+          "config_identification_version": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "number_of_files",
+    "waterfall_info"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 259,
+      "status": null,
+      "received_time_stamp": "2021-06-23 19:24:14.000000000",
+      "selector": 1,
+      "name": "waterfallInfo",
+      "display_name": "Waterfall",
+      "number_of_files": 5,
+      "waterfall_info": [
+        {
+          "config_id": 1,
+          "config_crc": "a5b9",
+          "config_identification_version": "Ken_Network_NanoTmo_1"
+        },
+        {
+          "config_id": 2,
+          "config_crc": "6ed6",
+          "config_identification_version": "Ken_Gps_1"
+        },
+        {
+          "config_id": 3,
+          "config_crc": "5d85",
+          "config_identification_version": "Ken_Events_Cutlass_6"
+        },
+        {
+          "config_id": 4,
+          "config_crc": "2c67",
+          "config_identification_version": "Ken_Behavior_Cutlass_9"
+        },
+        {
+          "config_id": 5,
+          "config_crc": "b2f8",
+          "config_identification_version": ""
+        }
+      ]
+    }
+  }
+}

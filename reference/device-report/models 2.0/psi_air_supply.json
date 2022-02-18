@@ -1,0 +1,100 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "comm_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "psi_air_supply_measure": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "required": [
+          "tank_status",
+          "tank_battery",
+          "supply_status",
+          "supply_battery",
+          "tank_pressure",
+          "supply_pressure"
+        ],
+        "properties": {
+          "tank_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tank_battery": {
+            "type": "string",
+            "minLength": 1
+          },
+          "supply_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "supply_battery": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tank_pressure": {
+            "type": "string",
+            "minLength": 1
+          },
+          "supply_pressure": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "comm_status",
+    "psi_air_supply_measure"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1578,
+      "status": null,
+      "received_time_stamp": "2021-12-02 09:54:29.000000000",
+      "selector": 0,
+      "name": "Beta PSI Air Supply Monitoring System",
+      "display_name": "PSI Air Supply Monitor",
+      "comm_status": "Online",
+      "psi_air_supply_measure": [
+        {
+          "tank_status": "Online",
+          "tank_battery": "Low",
+          "supply_status": "Online",
+          "supply_battery": "Low",
+          "tank_pressure": "7900 millibars",
+          "supply_pressure": "6400 millibars"
+        }
+      ]
+    }
+  }
+}

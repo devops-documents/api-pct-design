@@ -1,0 +1,73 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "device_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sequence": {
+      "type": "number"
+    },
+    "acknowledge": {
+      "type": "boolean"
+    },
+    "event_id": {
+      "type": "number"
+    },
+    "rtcdate_time_info": {
+      "type": "object",
+      "properties": {
+        "year": {
+          "type": "number"
+        },
+        "month": {
+          "type": "number"
+        },
+        "day": {
+          "type": "number"
+        },
+        "hour": {
+          "type": "number"
+        },
+        "minutes": {
+          "type": "number"
+        },
+        "seconds": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "year",
+        "month",
+        "day",
+        "hour",
+        "minutes",
+        "seconds"
+      ]
+    }
+  },
+  "required": [
+    "device_id",
+    "sequence",
+    "acknowledge",
+    "event_id",
+    "rtcdate_time_info"
+  ],
+  "x-examples": {
+    "example-1": {
+      "device_id": "015115006460447",
+      "sequence": 22,
+      "acknowledge": true,
+      "event_id": 46,
+      "rtcdate_time_info": {
+        "year": 2021,
+        "month": 6,
+        "day": 23,
+        "hour": 19,
+        "minutes": 24,
+        "seconds": 14
+      }
+    }
+  }
+}

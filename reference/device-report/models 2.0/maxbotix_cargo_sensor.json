@@ -1,0 +1,41 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sensor_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data_size": {
+      "type": "number"
+    },
+    "hardware_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "firmware_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "type",
+    "sensor_status",
+    "data_size",
+    "hardware_version",
+    "firmware_version"
+  ],
+  "x-examples": {
+    "example-1": {
+      "type": "Maxbotix Cargo Sensor",
+      "sensor_status": "Online",
+      "data_size": 3,
+      "hardware_version": "A",
+      "firmware_version": "3.2"
+    }
+  }
+}

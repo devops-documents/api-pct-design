@@ -1,0 +1,1134 @@
+openapi: 3.0.0
+info:
+  title: Phillips-Connect API
+  version: '1.0'
+  description: API Specification for Phillips-Connect Smart Trailer Solutions
+  contact:
+    name: Brent Whitney
+    email: bwhitney@phillips-connect.com
+servers:
+  - url: 'https://api.phillips-connect.com'
+    description: Prod API
+paths:
+  /reports:
+    get:
+      summary: Retrieve gateway reports
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  body:
+                    type: array
+                    items:
+                      $ref: ./device-report/models/report.v1.yaml
+                  total_reports:
+                    type: integer
+                    description: Total number of reports returned
+                  current_page:
+                    type: integer
+                    description: Current page index
+                  total_pages:
+                    type: integer
+                    description: Total number of pages returned
+                  response_message:
+                    type: string
+                  status:
+                    type: boolean
+              examples:
+                example-1:
+                  value:
+                    body:
+                      - gateway_id: string
+                        asset_id: string
+                        vin: string
+                        report_number: 0
+                        event_datetime: '2012-04-21T18:25:43Z'
+                        event_name: string
+                        server_datetime: string
+                        gateway_number: 0
+                        summary:
+                          latitude: '33.628342'
+                          longitude: '-117.927933'
+                          location_datetime: string
+                          speed: '80.1'
+                          heading: 0
+                          current_power_source: battery
+                          internal_temperature: 0
+                          is_trip: true
+                          odometer: 0
+                          ambient_temperature: 0
+                        internal_sensors:
+                          - type: gps-sensor
+                            latitude: '33.628342'
+                            longitude: '-117.927933'
+                            measurement_datetime: '2012-04-21T18:25:43Z'
+                            speed: 0
+                            HDOP: 1.6
+                            satellite_count: 0
+                            gps_accuracy: 2.3
+                        peripheral_sensors:
+                          - type: ABS
+                            condition: healthy
+                            odometer: 0
+                            VIN: string
+                            voltage: '11.23'
+                            faults:
+                              - SID: string
+                                is_active: true
+                                count: 0
+                                FMI_code: string
+                                FMI_description: string
+                        debug_number: 0
+                        gateway_sequence: 0
+                        version: string
+                    total_reports: 0
+                    current_page: 0
+                    total_pages: 0
+                    response_message: string
+                    status: true
+                example-2:
+                  value:
+                    body:
+                      - gateway_id: string
+                        asset_id: string
+                        vin: string
+                        report_number: 0
+                        event_datetime: '2012-04-21T18:25:43Z'
+                        event_name: string
+                        server_datetime: string
+                        gateway_number: 0
+                        summary:
+                          latitude: '33.628342'
+                          longitude: '-117.927933'
+                          location_datetime: string
+                          speed: '80.1'
+                          heading: 0
+                          current_power_source: battery
+                          internal_temperature: 0
+                          is_trip: true
+                          odometer: 0
+                          ambient_temperature: 0
+                        internal_sensors:
+                          - type: gps-sensor
+                            latitude: '33.628342'
+                            longitude: '-117.927933'
+                            measurement_datetime: '2012-04-21T18:25:43Z'
+                            speed: 0
+                            HDOP: 1.6
+                            satellite_count: 0
+                            gps_accuracy: 2.3
+                        peripheral_sensors:
+                          - type: ABS
+                            condition: healthy
+                            odometer: 0
+                            VIN: string
+                            voltage: '11.23'
+                            faults:
+                              - SID: string
+                                is_active: true
+                                count: 0
+                                FMI_code: string
+                                FMI_description: string
+                        debug_number: 0
+                        gateway_sequence: 0
+                        version: string
+                    total_reports: 0
+                    current_page: 0
+                    total_pages: 0
+                    response_message: string
+                    status: true
+            multipart/form-data:
+              schema:
+                type: object
+                properties: {}
+            text/html:
+              schema:
+                $ref: ./device-report/models/report.v1.yaml
+            text/plain:
+              schema:
+                type: object
+                properties:
+                  '':
+                    $ref: ./device-report/models/report.v1.yaml
+                  total_reports:
+                    type: integer
+                    description: Total reports based on the search criteria specified in the request
+                  current_page:
+                    type: integer
+                    description: Current page index
+                  total_pages:
+                    type: integer
+                    description: Total number of pages based on the result set
+          headers: {}
+      operationId: get-device-report
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: gateway-id
+          description: |
+            Required to search by gateway-id (imei). If the query-method is set to GATEWAY_NUMBER, the gateway-id must be specificied
+        - schema:
+            type: string
+            enum:
+              - DATETIME
+              - REPORT_NUMBER
+              - GATEWAY_NUMBER
+              - LATEST
+          in: query
+          name: query-method
+          description: Indicates how to query the server REPORT-NUMBER is a sequential number assigned for each report that is generated across all customer devicesGATEWAY_NUMBER is a sequential number assigned for each report that is generated per customer deviceDATETIME is the datetime of when the report is received by the PCT server
+        - schema:
+            type: string
+          in: query
+          name: from
+          description: 'From: [server datetime | report number | gateway number]'
+        - schema:
+            type: string
+          in: query
+          name: to
+          description: 'To: [server datetime | report number | gateway number]'
+        - schema:
+            type: integer
+          in: query
+          name: results-per-page
+          description: Number of results per page. Default is 2000 records
+        - schema:
+            type: integer
+          in: query
+          name: page-index
+          description: 'For a multi-page query, returns the specified page (from 1 to total_pages) '
+        - schema:
+            type: string
+          in: query
+          name: asset-id
+      description: |-
+        Returns historical gateway reports. Reports are generated based on PCT event types.
+
+        Open ended queries will pull recent reports across all gateways for a given customer (based on the data you are authorized to see, or you can limit this by providing a gateway-id (imei). 
+
+        For further filtering, you can pass in a query method and provide the appropriate 'from' and 'to'. See specific instructions in the appropriate fields.   
+      tags:
+        - Reports
+      x-internal: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                peripheral:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    status: {}
+                    received_time_stamp:
+                      type: string
+                      minLength: 1
+                    selector:
+                      type: number
+                    name:
+                      type: string
+                      minLength: 1
+                    display_name:
+                      type: string
+                      minLength: 1
+                    port_num:
+                      type: number
+                    driver:
+                      type: number
+                    port_type:
+                      type: number
+                    descript:
+                      type: string
+                      minLength: 1
+                    model:
+                      type: string
+                      minLength: 1
+                    rev:
+                      type: string
+                      minLength: 1
+                  required:
+                    - id
+                    - received_time_stamp
+                    - selector
+                    - name
+                    - display_name
+                    - port_num
+                    - driver
+                    - port_type
+                    - descript
+                    - model
+                    - rev
+                general:
+                  type: object
+                  properties:
+                    server_ip:
+                      type: string
+                      minLength: 1
+                    device_ip:
+                      type: string
+                      minLength: 1
+                    device_port:
+                      type: number
+                    server_port:
+                      type: number
+                    rawreport: {}
+                    uuid: {}
+                  required:
+                    - server_ip
+                    - device_ip
+                    - device_port
+                    - server_port
+                report_header:
+                  type: object
+                  properties:
+                    device_id:
+                      type: string
+                      minLength: 1
+                    sequence:
+                      type: number
+                    acknowledge:
+                      type: boolean
+                    event_id:
+                      type: number
+                    rtcdate_time_info:
+                      type: object
+                      properties:
+                        year:
+                          type: number
+                        month:
+                          type: number
+                        day:
+                          type: number
+                        hour:
+                          type: number
+                        minutes:
+                          type: number
+                        seconds:
+                          type: number
+                      required:
+                        - year
+                        - month
+                        - day
+                        - hour
+                        - minutes
+                        - seconds
+                  required:
+                    - device_id
+                    - sequence
+                    - acknowledge
+                    - event_id
+                    - rtcdate_time_info
+                tftp_status:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    status: {}
+                    received_time_stamp:
+                      type: string
+                      minLength: 1
+                    selector:
+                      type: number
+                    name:
+                      type: string
+                      minLength: 1
+                    display_name:
+                      type: string
+                      minLength: 1
+                    tftp_status:
+                      type: string
+                      minLength: 1
+                  required:
+                    - id
+                    - received_time_stamp
+                    - selector
+                    - name
+                    - display_name
+                    - tftp_status
+                waterfall:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    status: {}
+                    received_time_stamp:
+                      type: string
+                      minLength: 1
+                    selector:
+                      type: number
+                    name:
+                      type: string
+                      minLength: 1
+                    display_name:
+                      type: string
+                      minLength: 1
+                    number_of_files:
+                      type: number
+                    waterfall_info:
+                      type: array
+                      uniqueItems: true
+                      minItems: 1
+                      items:
+                        required:
+                          - config_id
+                          - config_crc
+                          - config_identification_version
+                        properties:
+                          config_id:
+                            type: number
+                          config_crc:
+                            type: string
+                            minLength: 1
+                          config_identification_version:
+                            type: string
+                            minLength: 1
+                  required:
+                    - id
+                    - received_time_stamp
+                    - selector
+                    - name
+                    - display_name
+                    - number_of_files
+                    - waterfall_info
+                network_field:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    status: {}
+                    received_time_stamp:
+                      type: string
+                      minLength: 1
+                    selector:
+                      type: number
+                    name:
+                      type: string
+                      minLength: 1
+                    display_name:
+                      type: string
+                      minLength: 1
+                    rssi:
+                      type: number
+                    mask:
+                      type: number
+                    roaming_index:
+                      type: number
+                    service_type_index:
+                      type: number
+                    mobile_country_code:
+                      type: number
+                    mobile_network_code:
+                      type: number
+                    tower_id:
+                      type: string
+                      minLength: 1
+                    tower_centroid_latitude:
+                      type: number
+                    tower_centroid_longitude:
+                      type: number
+                    cellular_band:
+                      type: string
+                      minLength: 1
+                    rx_tx_ec:
+                      type: string
+                      minLength: 1
+                  required:
+                    - id
+                    - received_time_stamp
+                    - selector
+                    - name
+                    - display_name
+                    - rssi
+                    - mask
+                    - roaming_index
+                    - service_type_index
+                    - mobile_country_code
+                    - mobile_network_code
+                    - tower_id
+                    - tower_centroid_latitude
+                    - tower_centroid_longitude
+                    - cellular_band
+                    - rx_tx_ec
+                peripheral_version:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    status: {}
+                    received_time_stamp:
+                      type: string
+                      minLength: 1
+                    selector:
+                      type: number
+                    name:
+                      type: string
+                      minLength: 1
+                    display_name:
+                      type: string
+                      minLength: 1
+                    lite_sentry:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          minLength: 1
+                        sensor_status:
+                          type: string
+                          minLength: 1
+                        data_size:
+                          type: number
+                        hardware_id: {}
+                        hardware_version: {}
+                        app_version: {}
+                        boot_version: {}
+                      required:
+                        - type
+                        - sensor_status
+                        - data_size
+                    maxbotix_cargo_sensor: {}
+                    ste_receiver:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          minLength: 1
+                        sensor_status: {}
+                        data_size:
+                          type: number
+                        mcu_app: {}
+                        zeeki_app: {}
+                      required:
+                        - type
+                        - data_size
+                    riot_cargo_or_chassis_sensor: {}
+                    hegemon_absreader:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          minLength: 1
+                        sensor_status:
+                          type: string
+                          minLength: 1
+                        data_size:
+                          type: number
+                        version: {}
+                      required:
+                        - type
+                        - sensor_status
+                        - data_size
+                    abs_reader: {}
+                    temperature_sensor: {}
+                    lamp_check_atis:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          minLength: 1
+                        sensor_status: {}
+                        data_size:
+                          type: number
+                        data_elements:
+                          type: array
+                          items:
+                            required: []
+                            properties: {}
+                      required:
+                        - type
+                        - data_size
+                        - data_elements
+                    door_sensor: {}
+                  required:
+                    - id
+                    - received_time_stamp
+                    - selector
+                    - name
+                    - display_name
+                    - lite_sentry
+                    - ste_receiver
+                    - hegemon_absreader
+                    - lamp_check_atis
+                general_mask_fields:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    status: {}
+                    received_time_stamp:
+                      type: string
+                      minLength: 1
+                    selector: {}
+                    name:
+                      type: string
+                      minLength: 1
+                    display_name:
+                      type: string
+                      minLength: 1
+                    gpsstatus_index:
+                      type: number
+                    num_satellites:
+                      type: number
+                    hdop:
+                      type: number
+                    external_power_volts:
+                      type: number
+                    internal_power_volts:
+                      type: number
+                    odometer_kms:
+                      type: number
+                    latitude:
+                      type: number
+                    longitude:
+                      type: number
+                    altitude_feet:
+                      type: number
+                    speed_kms:
+                      type: number
+                    heading:
+                      type: number
+                    rssi:
+                      type: number
+                    gps_time:
+                      type: string
+                      minLength: 1
+                    power:
+                      type: string
+                      minLength: 1
+                    trip:
+                      type: string
+                      minLength: 1
+                    ignition:
+                      type: string
+                      minLength: 1
+                    motion:
+                      type: string
+                      minLength: 1
+                    shipping_mode:
+                      type: string
+                      minLength: 1
+                    vib_trip:
+                      type: string
+                      minLength: 1
+                    charger:
+                      type: string
+                      minLength: 1
+                    tamper:
+                      type: string
+                      minLength: 1
+                    odometer_field:
+                      type: string
+                      minLength: 1
+                    status_field:
+                      type: string
+                      minLength: 1
+                    ext_int_power:
+                      type: string
+                      minLength: 1
+                    gps_field:
+                      type: string
+                      minLength: 1
+                    altitude_field:
+                      type: string
+                      minLength: 1
+                    speedheading_field:
+                      type: string
+                      minLength: 1
+                  required:
+                    - id
+                    - received_time_stamp
+                    - name
+                    - display_name
+                    - gpsstatus_index
+                    - num_satellites
+                    - hdop
+                    - external_power_volts
+                    - internal_power_volts
+                    - odometer_kms
+                    - latitude
+                    - longitude
+                    - altitude_feet
+                    - speed_kms
+                    - heading
+                    - rssi
+                    - gps_time
+                    - power
+                    - trip
+                    - ignition
+                    - motion
+                    - shipping_mode
+                    - vib_trip
+                    - charger
+                    - tamper
+                    - odometer_field
+                    - status_field
+                    - ext_int_power
+                    - gps_field
+                    - altitude_field
+                    - speedheading_field
+                software_version:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    status: {}
+                    received_time_stamp:
+                      type: string
+                      minLength: 1
+                    selector:
+                      type: number
+                    name:
+                      type: string
+                      minLength: 1
+                    display_name:
+                      type: string
+                      minLength: 1
+                    hw_id_version:
+                      type: number
+                    os_version:
+                      type: string
+                      minLength: 1
+                    device_name:
+                      type: string
+                      minLength: 1
+                    app_version:
+                      type: string
+                      minLength: 1
+                    extender_version:
+                      type: string
+                      minLength: 1
+                    ble_version:
+                      type: string
+                      minLength: 1
+                    hw_version_revision:
+                      type: number
+                  required:
+                    - id
+                    - received_time_stamp
+                    - selector
+                    - name
+                    - display_name
+                    - hw_id_version
+                    - os_version
+                    - device_name
+                    - app_version
+                    - extender_version
+                    - ble_version
+                    - hw_version_revision
+                config_version:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    status: {}
+                    received_time_stamp:
+                      type: string
+                      minLength: 1
+                    selector: {}
+                    name:
+                      type: string
+                      minLength: 1
+                    display_name:
+                      type: string
+                      minLength: 1
+                    device_config:
+                      type: number
+                    configuration_desc:
+                      type: string
+                      minLength: 1
+                  required:
+                    - id
+                    - received_time_stamp
+                    - name
+                    - display_name
+                    - device_config
+                    - configuration_desc
+                voltage:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    status: {}
+                    received_time_stamp:
+                      type: string
+                      minLength: 1
+                    selector:
+                      type: number
+                    name:
+                      type: string
+                      minLength: 1
+                    display_name:
+                      type: string
+                      minLength: 1
+                    main_power:
+                      type: number
+                    aux_power:
+                      type: number
+                    charge_power:
+                      type: number
+                    battery_power:
+                      type: number
+                  required:
+                    - id
+                    - received_time_stamp
+                    - selector
+                    - name
+                    - display_name
+                    - main_power
+                    - aux_power
+                    - charge_power
+                    - battery_power
+              required:
+                - peripheral
+                - general
+                - report_header
+                - tftp_status
+                - waterfall
+                - network_field
+                - peripheral_version
+                - general_mask_fields
+                - software_version
+                - config_version
+                - voltage
+              x-examples:
+                example-1:
+                  peripheral:
+                    id: 257
+                    status: null
+                    received_time_stamp: '2021-06-23 19:24:14.000000000'
+                    selector: 1
+                    name: Peripheral
+                    display_name: Periph Versions
+                    port_num: 0
+                    driver: 10
+                    port_type: 0
+                    descript: "SN:0000000000000000\0"
+                    model: "HW:0-00 v0\0"
+                    rev: "FW:0 0.0.0 nr\0"
+                  general:
+                    server_ip: 127.0.0.1
+                    device_ip: 127.0.0.1
+                    device_port: 10
+                    server_port: 10
+                    rawreport: null
+                    uuid: null
+                  report_header:
+                    device_id: '015115006460447'
+                    sequence: 22
+                    acknowledge: true
+                    event_id: 46
+                    rtcdate_time_info:
+                      year: 2021
+                      month: 6
+                      day: 23
+                      hour: 19
+                      minutes: 24
+                      seconds: 14
+                  tftp_status:
+                    id: 512
+                    status: null
+                    received_time_stamp: '2021-06-23 19:24:14.000000000'
+                    selector: 1
+                    name: TFTP status
+                    display_name: TFTP status
+                    tftp_status: Application Successful
+                  waterfall:
+                    id: 259
+                    status: null
+                    received_time_stamp: '2021-06-23 19:24:14.000000000'
+                    selector: 1
+                    name: waterfallInfo
+                    display_name: Waterfall
+                    number_of_files: 5
+                    waterfall_info:
+                      - config_id: 1
+                        config_crc: a5b9
+                        config_identification_version: Ken_Network_NanoTmo_1
+                      - config_id: 2
+                        config_crc: 6ed6
+                        config_identification_version: Ken_Gps_1
+                      - config_id: 3
+                        config_crc: 5d85
+                        config_identification_version: Ken_Events_Cutlass_6
+                      - config_id: 4
+                        config_crc: 2c67
+                        config_identification_version: Ken_Behavior_Cutlass_9
+                      - config_id: 5
+                        config_crc: b2f8
+                        config_identification_version: ''
+                  network_field:
+                    id: 17
+                    status: null
+                    received_time_stamp: '2021-06-23 19:24:14.000000000'
+                    selector: 127
+                    name: Network
+                    display_name: Network
+                    rssi: 59
+                    mask: 127
+                    roaming_index: 0
+                    service_type_index: 4
+                    mobile_country_code: 310
+                    mobile_network_code: 260
+                    tower_id: 007e000000dc
+                    tower_centroid_latitude: 0
+                    tower_centroid_longitude: 0
+                    cellular_band: '0000000000'
+                    rx_tx_ec: ffaf00166464
+                  peripheral_version:
+                    id: 261
+                    status: null
+                    received_time_stamp: '2021-06-23 19:24:14.000000000'
+                    selector: 14
+                    name: Peripheral Version
+                    display_name: Peripheral Versions
+                    lite_sentry:
+                      type: Lite Sentry
+                      sensor_status: Offline
+                      data_size: 0
+                      hardware_id: null
+                      hardware_version: null
+                      app_version: null
+                      boot_version: null
+                    maxbotix_cargo_sensor: null
+                    ste_receiver:
+                      type: STE TPMS Receiver
+                      sensor_status: null
+                      data_size: 49
+                      mcu_app: null
+                      zeeki_app: null
+                    riot_cargo_or_chassis_sensor: null
+                    hegemon_absreader:
+                      type: Hegemon PLC Reader
+                      sensor_status: INITIALIZING
+                      data_size: 0
+                      version: null
+                    abs_reader: null
+                    temperature_sensor: null
+                    lamp_check_atis:
+                      type: Lamp Check ATIS
+                      sensor_status: null
+                      data_size: 0
+                      data_elements: []
+                    door_sensor: null
+                  general_mask_fields:
+                    id: 1
+                    status: null
+                    received_time_stamp: '2021-06-23 19:24:14.000000000'
+                    selector: null
+                    name: 'General Report Data '
+                    display_name: General TLV
+                    gpsstatus_index: 1
+                    num_satellites: 9
+                    hdop: 0.9
+                    external_power_volts: 11.6
+                    internal_power_volts: 4.15
+                    odometer_kms: 69.8
+                    latitude: 33.668047
+                    longitude: -117.858916
+                    altitude_feet: 0
+                    speed_kms: 0
+                    heading: 0
+                    rssi: 57
+                    gps_time: '2021-06-23 19:24:14.00000'
+                    power: external
+                    trip: 'Off'
+                    ignition: 'Off'
+                    motion: 'Off'
+                    shipping_mode: 'Off'
+                    vib_trip: 'Off'
+                    charger: 'On'
+                    tamper: 'Off'
+                    odometer_field: enabled
+                    status_field: enabled
+                    ext_int_power: enabled
+                    gps_field: enabled
+                    altitude_field: enabled
+                    speedheading_field: enabled
+                  software_version:
+                    id: 256
+                    status: null
+                    received_time_stamp: '2021-06-23 19:24:14.000000000'
+                    selector: 1
+                    name: Software Version
+                    display_name: Software Version
+                    hw_id_version: 16405
+                    os_version: 1.2.22_B1
+                    device_name: cutlass-lg
+                    app_version: 2.10.10_B4
+                    extender_version: 2.3.0_b150
+                    ble_version: 2.0.3_b0
+                    hw_version_revision: 16
+                  config_version:
+                    id: 258
+                    status: null
+                    received_time_stamp: '2021-06-23 19:24:14.000000000'
+                    selector: null
+                    name: Config Version
+                    display_name: Config Version
+                    device_config: 32767
+                    configuration_desc: Ken_Network_NanoTmo_1
+                  voltage:
+                    id: 528
+                    status: null
+                    received_time_stamp: '2021-06-23 19:24:14.000000000'
+                    selector: 1
+                    name: voltage
+                    display_name: Voltage
+                    main_power: 11.77
+                    aux_power: 0.019
+                    charge_power: 0
+                    battery_power: 4.156
+    parameters: []
+  /token/login:
+    post:
+      summary: Generate a PCT API token
+      tags:
+        - Security Token
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                  tokenType:
+                    type: string
+                    enum:
+                      - Bearer
+      operationId: post-token-login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      description: Generate a token to be used in API calls
+      x-internal: true
+  /asset/assign:
+    post:
+      summary: Asset association
+      tags:
+        - Asset
+      responses:
+        '200':
+          description: OK
+      operationId: post-asset
+      description: Called when a gateway is installed on an asset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                gateway_id:
+                  type: string
+                asset_id:
+                  type: string
+                event_datetime:
+                  type: string
+                  description: Time that the gateway was associated to the gateway
+            examples:
+              example-1:
+                value:
+                  gateway_id: string
+                  asset_id: string
+                  event_datetime: string
+              example-2:
+                value:
+                  gateway_id: string
+                  asset_id: string
+                  event_datetime: string
+        description: Associate an asset to a gateway
+      x-internal: true
+    parameters: []
+  /asset/reassign:
+    post:
+      summary: Asset reassignment
+      tags:
+        - Asset
+      responses:
+        '200':
+          description: OK
+      operationId: post-asset-replace
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                gateway_id:
+                  type: string
+                old_asset_id:
+                  type: string
+                new_asset_id:
+                  type: string
+                event_datetime:
+                  type: string
+            examples:
+              example-1:
+                value:
+                  gateway_id: string
+                  old_asset_id: string
+                  new_asset_id: string
+                  event_datetime: string
+              example-2:
+                value:
+                  gateway_id: string
+                  old_asset_id: string
+                  new_asset_id: string
+                  event_datetime: string
+        description: Move the gateway to a new asset
+      description: Called when the gateway is moved to a different asset
+      x-internal: true
+    parameters: []
+  /asset/unassign:
+    post:
+      summary: Asset dissociation
+      tags:
+        - Asset
+      responses:
+        '200':
+          description: OK
+      operationId: post-asset-remove
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                gateway_id:
+                  type: string
+                asset_id:
+                  type: string
+                event_datetime:
+                  type: string
+            examples:
+              example-1:
+                value:
+                  gateway_id: string
+                  asset_id: string
+                  event_datetime: string
+        description: Dissociate the asset from a gateway
+      description: Called when the gateway is uninstalled on an asset
+      x-internal: true
+    parameters: []
+components:
+  schemas: {}
+  securitySchemes:
+    API Key - 1:
+      type: http
+      scheme: bearer

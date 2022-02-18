@@ -1,0 +1,98 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {},
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "no_faults": {
+      "type": "boolean"
+    },
+    "mis_wired": {
+      "type": "boolean"
+    },
+    "active_faults_without_stored_faults": {
+      "type": "boolean"
+    },
+    "no_active_faults_with_stored_faults": {
+      "type": "boolean"
+    },
+    "active_and_stored_faults": {
+      "type": "boolean"
+    },
+    "not_communicating": {
+      "type": "boolean"
+    },
+    "not_powered_up": {
+      "type": "boolean"
+    },
+    "num_active_faults": {
+      "type": "number"
+    },
+    "active_faults_codes": {
+      "type": "array",
+      "items": {
+        "required": [],
+        "properties": {}
+      }
+    },
+    "num_stored_faults": {
+      "type": "number"
+    },
+    "stored_faults_codes": {}
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "name",
+    "display_name",
+    "no_faults",
+    "mis_wired",
+    "active_faults_without_stored_faults",
+    "no_active_faults_with_stored_faults",
+    "active_and_stored_faults",
+    "not_communicating",
+    "not_powered_up",
+    "num_active_faults",
+    "active_faults_codes",
+    "num_stored_faults"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1553,
+      "status": null,
+      "received_time_stamp": "2021-12-15 12:01:22.000000000",
+      "selector": null,
+      "name": "Alpha ABS",
+      "display_name": "A ABS",
+      "no_faults": false,
+      "mis_wired": false,
+      "active_faults_without_stored_faults": false,
+      "no_active_faults_with_stored_faults": true,
+      "active_and_stored_faults": false,
+      "not_communicating": false,
+      "not_powered_up": false,
+      "num_active_faults": 2,
+      "active_faults_codes": [
+        6,
+        4
+      ],
+      "num_stored_faults": 0,
+      "stored_faults_codes": null
+    }
+  }
+}

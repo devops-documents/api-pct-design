@@ -1,0 +1,304 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lite_sentry": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sensor_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "data_size": {
+          "type": "number"
+        },
+        "hardware_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hardware_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "app_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boot_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "type",
+        "sensor_status",
+        "data_size",
+        "hardware_id",
+        "hardware_version",
+        "app_version",
+        "boot_version"
+      ]
+    },
+    "maxbotix_cargo_sensor": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sensor_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "data_size": {
+          "type": "number"
+        },
+        "hardware_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "firmware_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "type",
+        "sensor_status",
+        "data_size",
+        "hardware_version",
+        "firmware_version"
+      ]
+    },
+    "ste_receiver": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sensor_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "data_size": {
+          "type": "number"
+        },
+        "mcu_app": {
+          "type": "string",
+          "minLength": 1
+        },
+        "zeeki_app": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "type",
+        "sensor_status",
+        "data_size",
+        "mcu_app",
+        "zeeki_app"
+      ]
+    },
+    "riot_cargo_or_chassis_sensor": {},
+    "hegemon_absreader": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sensor_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "data_size": {
+          "type": "number"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "type",
+        "sensor_status",
+        "data_size",
+        "version"
+      ]
+    },
+    "abs_reader": {},
+    "temperature_sensor": {},
+    "lamp_check_atis": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sensor_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "data_size": {
+          "type": "number"
+        },
+        "data_elements": {
+          "type": "array",
+          "items": {
+            "required": [],
+            "properties": {}
+          }
+        }
+      },
+      "required": [
+        "type",
+        "sensor_status",
+        "data_size",
+        "data_elements"
+      ]
+    },
+    "door_sensor": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sensor_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "data_size": {
+          "type": "number"
+        },
+        "data_elements": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "location",
+              "hardware_version",
+              "firmware_version"
+            ],
+            "properties": {
+              "location": {
+                "type": "number"
+              },
+              "hardware_version": {
+                "type": "number"
+              },
+              "firmware_version": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "type",
+        "sensor_status",
+        "data_size",
+        "data_elements"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "lite_sentry",
+    "maxbotix_cargo_sensor",
+    "ste_receiver",
+    "hegemon_absreader",
+    "lamp_check_atis",
+    "door_sensor"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 261,
+      "status": null,
+      "received_time_stamp": "2021-12-02 09:54:11.000000000",
+      "selector": 0,
+      "name": "Peripheral Version",
+      "display_name": "Peripheral Versions",
+      "lite_sentry": {
+        "type": "Lite Sentry",
+        "sensor_status": "Online",
+        "data_size": 11,
+        "hardware_id": "0",
+        "hardware_version": "0",
+        "app_version": "1.4.1_b6",
+        "boot_version": "0.0.0_B0"
+      },
+      "maxbotix_cargo_sensor": {
+        "type": "Maxbotix Cargo Sensor",
+        "sensor_status": "Online",
+        "data_size": 3,
+        "hardware_version": "A",
+        "firmware_version": "3.2"
+      },
+      "ste_receiver": {
+        "type": "STE TPMS Receiver",
+        "sensor_status": "Online",
+        "data_size": 6,
+        "mcu_app": "1.0.3_b0",
+        "zeeki_app": "3.6"
+      },
+      "riot_cargo_or_chassis_sensor": null,
+      "hegemon_absreader": {
+        "type": "Hegemon PLC Reader",
+        "sensor_status": "Online",
+        "data_size": 5,
+        "version": "312e343200"
+      },
+      "abs_reader": null,
+      "temperature_sensor": null,
+      "lamp_check_atis": {
+        "type": "Lamp Check ATIS",
+        "sensor_status": "Online",
+        "data_size": 0,
+        "data_elements": []
+      },
+      "door_sensor": {
+        "type": "BLE PCT Door Sensor",
+        "sensor_status": "Online",
+        "data_size": 2,
+        "data_elements": [
+          {
+            "location": 0,
+            "hardware_version": 1,
+            "firmware_version": 5
+          }
+        ]
+      }
+    }
+  }
+}

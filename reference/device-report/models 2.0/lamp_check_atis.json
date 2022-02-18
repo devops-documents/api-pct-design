@@ -1,0 +1,38 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sensor_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data_size": {
+      "type": "number"
+    },
+    "data_elements": {
+      "type": "array",
+      "items": {
+        "required": [],
+        "properties": {}
+      }
+    }
+  },
+  "required": [
+    "type",
+    "sensor_status",
+    "data_size",
+    "data_elements"
+  ],
+  "x-examples": {
+    "example-1": {
+      "type": "Lamp Check ATIS",
+      "sensor_status": "Online",
+      "data_size": 0,
+      "data_elements": []
+    }
+  }
+}

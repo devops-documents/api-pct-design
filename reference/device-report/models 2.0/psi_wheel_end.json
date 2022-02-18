@@ -1,0 +1,113 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "comm_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "axle_elements": {
+      "type": "number"
+    },
+    "psi_wheel_end_measure": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "required": [
+          "left_status",
+          "left_battery",
+          "right_status",
+          "right_battery",
+          "left_temperature",
+          "right_temperature"
+        ],
+        "properties": {
+          "left_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "left_battery": {
+            "type": "string",
+            "minLength": 1
+          },
+          "right_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "right_battery": {
+            "type": "string",
+            "minLength": 1
+          },
+          "left_temperature": {
+            "type": "string",
+            "minLength": 1
+          },
+          "right_temperature": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "comm_status",
+    "axle_elements",
+    "psi_wheel_end_measure"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1575,
+      "status": null,
+      "received_time_stamp": "2022-02-17 12:42:44.000000000",
+      "selector": 0,
+      "name": "Beta PSI Wheel End Monitoring System",
+      "display_name": "PSI Wheel End Sensor",
+      "comm_status": "Online",
+      "axle_elements": 2,
+      "psi_wheel_end_measure": [
+        {
+          "left_status": "Online",
+          "left_battery": "Low",
+          "right_status": "Online",
+          "right_battery": "Low",
+          "left_temperature": "Temperature is less than -50 C",
+          "right_temperature": "1"
+        },
+        {
+          "left_status": "Online",
+          "left_battery": "Low",
+          "right_status": "Online",
+          "right_battery": "Low",
+          "left_temperature": "1",
+          "right_temperature": "1"
+        }
+      ]
+    }
+  }
+}

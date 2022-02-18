@@ -1,0 +1,82 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hw_id_version": {
+      "type": "number"
+    },
+    "os_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "device_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "app_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "extender_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ble_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hw_version_revision": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "hw_id_version",
+    "os_version",
+    "device_name",
+    "app_version",
+    "extender_version",
+    "ble_version",
+    "hw_version_revision"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 256,
+      "status": null,
+      "received_time_stamp": "2021-06-23 19:24:14.000000000",
+      "selector": 1,
+      "name": "Software Version",
+      "display_name": "Software Version",
+      "hw_id_version": 16405,
+      "os_version": "1.2.22_B1",
+      "device_name": "cutlass-lg",
+      "app_version": "2.10.10_B4",
+      "extender_version": "2.3.0_b150",
+      "ble_version": "2.0.3_b0",
+      "hw_version_revision": 16
+    }
+  }
+}

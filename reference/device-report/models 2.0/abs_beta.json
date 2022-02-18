@@ -1,0 +1,92 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "num_sensors": {
+      "type": "number"
+    },
+    "abs_voltage": {
+      "type": "number"
+    },
+    "reserved": {
+      "type": "string",
+      "minLength": 1
+    },
+    "abs_warning_lamp": {
+      "type": "number"
+    },
+    "abs_warning_lamp_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "num_of_faults": {
+      "type": "number"
+    },
+    "is_any_fault_active": {
+      "type": "boolean"
+    },
+    "absbeta_measure": {
+      "type": "array",
+      "items": {
+        "required": [],
+        "properties": {}
+      }
+    }
+  },
+  "required": [
+    "id",
+    "status",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "num_sensors",
+    "abs_voltage",
+    "reserved",
+    "abs_warning_lamp",
+    "abs_warning_lamp_status",
+    "num_of_faults",
+    "is_any_fault_active",
+    "absbeta_measure"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1569,
+      "status": "Online",
+      "received_time_stamp": "2021-12-02 09:54:29.000000000",
+      "selector": 0,
+      "name": "ABS DTC Beta",
+      "display_name": "ABS Beta",
+      "num_sensors": 0,
+      "abs_voltage": 13.8,
+      "reserved": "00",
+      "abs_warning_lamp": 0,
+      "abs_warning_lamp_status": "off",
+      "num_of_faults": 0,
+      "is_any_fault_active": false,
+      "absbeta_measure": []
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {},
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "gpsstatus_index": {
+      "type": "number"
+    },
+    "num_satellites": {
+      "type": "number"
+    },
+    "hdop": {
+      "type": "number"
+    },
+    "external_power_volts": {
+      "type": "number"
+    },
+    "internal_power_volts": {
+      "type": "number"
+    },
+    "odometer_kms": {
+      "type": "number"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "altitude_feet": {
+      "type": "number"
+    },
+    "speed_kms": {
+      "type": "number"
+    },
+    "heading": {
+      "type": "number"
+    },
+    "rssi": {
+      "type": "number"
+    },
+    "gps_time": {
+      "type": "string",
+      "minLength": 1
+    },
+    "power": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trip": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ignition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "motion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "shipping_mode": {
+      "type": "string",
+      "minLength": 1
+    },
+    "vib_trip": {
+      "type": "string",
+      "minLength": 1
+    },
+    "charger": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tamper": {
+      "type": "string",
+      "minLength": 1
+    },
+    "odometer_field": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status_field": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ext_int_power": {
+      "type": "string",
+      "minLength": 1
+    },
+    "gps_field": {
+      "type": "string",
+      "minLength": 1
+    },
+    "altitude_field": {
+      "type": "string",
+      "minLength": 1
+    },
+    "speedheading_field": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "name",
+    "display_name",
+    "gpsstatus_index",
+    "num_satellites",
+    "hdop",
+    "external_power_volts",
+    "internal_power_volts",
+    "odometer_kms",
+    "latitude",
+    "longitude",
+    "altitude_feet",
+    "speed_kms",
+    "heading",
+    "rssi",
+    "gps_time",
+    "power",
+    "trip",
+    "ignition",
+    "motion",
+    "shipping_mode",
+    "vib_trip",
+    "charger",
+    "tamper",
+    "odometer_field",
+    "status_field",
+    "ext_int_power",
+    "gps_field",
+    "altitude_field",
+    "speedheading_field"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1,
+      "status": null,
+      "received_time_stamp": "2021-06-23 19:24:14.000000000",
+      "selector": null,
+      "name": "General Report Data ",
+      "display_name": "General TLV",
+      "gpsstatus_index": 1,
+      "num_satellites": 9,
+      "hdop": 0.9,
+      "external_power_volts": 11.6,
+      "internal_power_volts": 4.15,
+      "odometer_kms": 69.8,
+      "latitude": 33.668047,
+      "longitude": -117.858916,
+      "altitude_feet": 0,
+      "speed_kms": 0,
+      "heading": 0,
+      "rssi": 57,
+      "gps_time": "2021-06-23 19:24:14.00000",
+      "power": "external",
+      "trip": "Off",
+      "ignition": "Off",
+      "motion": "Off",
+      "shipping_mode": "Off",
+      "vib_trip": "Off",
+      "charger": "On",
+      "tamper": "Off",
+      "odometer_field": "enabled",
+      "status_field": "enabled",
+      "ext_int_power": "enabled",
+      "gps_field": "enabled",
+      "altitude_field": "enabled",
+      "speedheading_field": "enabled"
+    }
+  }
+}

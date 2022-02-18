@@ -1,0 +1,169 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "num_sensors": {
+      "type": "number"
+    },
+    "tpms_beta_measure": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "required": [
+          "primary_curb_status",
+          "inner_curb_status",
+          "inner_roadside_status",
+          "primary_roadside_status",
+          "primary_curbside_pressure",
+          "primary_curbside_pressure_psi",
+          "primary_curbside_temperature",
+          "primary_roadside_pressure",
+          "primary_roadside_pressure_psi",
+          "primary_roadside_temperature",
+          "inner_roadside_pressure",
+          "inner_roadside_pressure_psi",
+          "inner_roadside_temperature",
+          "inner_curbside_pressure",
+          "inner_curbisde_pressure_psi",
+          "inner_curbside_temperature"
+        ],
+        "properties": {
+          "primary_curb_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "inner_curb_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "inner_roadside_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "primary_roadside_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "primary_curbside_pressure": {
+            "type": "number"
+          },
+          "primary_curbside_pressure_psi": {
+            "type": "number"
+          },
+          "primary_curbside_temperature": {
+            "type": "number"
+          },
+          "primary_roadside_pressure": {
+            "type": "number"
+          },
+          "primary_roadside_pressure_psi": {
+            "type": "number"
+          },
+          "primary_roadside_temperature": {
+            "type": "number"
+          },
+          "inner_roadside_pressure": {
+            "type": "number"
+          },
+          "inner_roadside_pressure_psi": {
+            "type": "number"
+          },
+          "inner_roadside_temperature": {
+            "type": "number"
+          },
+          "inner_curbside_pressure": {
+            "type": "number"
+          },
+          "inner_curbisde_pressure_psi": {
+            "type": "number"
+          },
+          "inner_curbside_temperature": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "status",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "num_sensors",
+    "tpms_beta_measure"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1568,
+      "status": "Online",
+      "received_time_stamp": "2021-12-02 09:54:29.000000000",
+      "selector": 0,
+      "name": "Beta TPMS ",
+      "display_name": "Beta TPMS",
+      "num_sensors": 2,
+      "tpms_beta_measure": [
+        {
+          "primary_curb_status": "Online",
+          "inner_curb_status": "Online",
+          "inner_roadside_status": "Online",
+          "primary_roadside_status": "Online",
+          "primary_curbside_pressure": 7200,
+          "primary_curbside_pressure_psi": 104.42718,
+          "primary_curbside_temperature": 16,
+          "primary_roadside_pressure": 7200,
+          "primary_roadside_pressure_psi": 104.42718,
+          "primary_roadside_temperature": 16,
+          "inner_roadside_pressure": 6600,
+          "inner_roadside_pressure_psi": 95.72491,
+          "inner_roadside_temperature": 17,
+          "inner_curbside_pressure": 6700,
+          "inner_curbisde_pressure_psi": 97.175285,
+          "inner_curbside_temperature": 16
+        },
+        {
+          "primary_curb_status": "Offline",
+          "inner_curb_status": "Online",
+          "inner_roadside_status": "Online",
+          "primary_roadside_status": "Online",
+          "primary_curbside_pressure": 9999,
+          "primary_curbside_pressure_psi": 9999,
+          "primary_curbside_temperature": 9999,
+          "primary_roadside_pressure": 6900,
+          "primary_roadside_pressure_psi": 100.07604,
+          "primary_roadside_temperature": 18,
+          "inner_roadside_pressure": 6600,
+          "inner_roadside_pressure_psi": 95.72491,
+          "inner_roadside_temperature": 17,
+          "inner_curbside_pressure": 6600,
+          "inner_curbisde_pressure_psi": 95.72491,
+          "inner_curbside_temperature": 19
+        }
+      ]
+    }
+  }
+}

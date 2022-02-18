@@ -1,0 +1,84 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "communicating": {
+      "type": "boolean"
+    },
+    "mis_wired": {
+      "type": "boolean"
+    },
+    "generic_fault": {
+      "type": "boolean"
+    },
+    "marker_fault": {
+      "type": "boolean"
+    },
+    "dead_right_marker_bulb": {
+      "type": "boolean"
+    },
+    "dead_stop_bulb": {
+      "type": "boolean"
+    },
+    "dead_left_marker_bulb": {
+      "type": "boolean"
+    },
+    "dead_license_bulb": {
+      "type": "boolean"
+    },
+    "light_sentry_error": {}
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "communicating",
+    "mis_wired",
+    "generic_fault",
+    "marker_fault",
+    "dead_right_marker_bulb",
+    "dead_stop_bulb",
+    "dead_left_marker_bulb",
+    "dead_license_bulb"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1552,
+      "status": null,
+      "received_time_stamp": "2021-12-15 10:11:19.000000000",
+      "selector": -128,
+      "name": "Lite-Sentry Alpha",
+      "display_name": "A LODC",
+      "communicating": false,
+      "mis_wired": false,
+      "generic_fault": false,
+      "marker_fault": false,
+      "dead_right_marker_bulb": false,
+      "dead_stop_bulb": false,
+      "dead_left_marker_bulb": false,
+      "dead_license_bulb": false,
+      "light_sentry_error": null
+    }
+  }
+}

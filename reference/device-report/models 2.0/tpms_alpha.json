@@ -1,0 +1,199 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "num_sensors": {
+      "type": "number"
+    },
+    "tpms_measures": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "required": [
+          "axle_tireire_location_code",
+          "tire_location_str",
+          "axle_location",
+          "location_code_hex_str",
+          "tire_pressure_mbar",
+          "tire_location",
+          "tire_pressure_psi",
+          "tire_temperature_c"
+        ],
+        "properties": {
+          "axle_tireire_location_code": {
+            "type": "number"
+          },
+          "tire_location_str": {
+            "type": "string",
+            "minLength": 1
+          },
+          "axle_location": {
+            "type": "number"
+          },
+          "location_code_hex_str": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tire_pressure_mbar": {
+            "type": "number"
+          },
+          "tire_location": {
+            "type": "number"
+          },
+          "tire_pressure_psi": {
+            "type": "number"
+          },
+          "tire_temperature_c": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "status",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "num_sensors",
+    "tpms_measures"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1556,
+      "status": "Healthy",
+      "received_time_stamp": "2021-12-02 09:54:29.000000000",
+      "selector": 0,
+      "name": "Alpha TPMS",
+      "display_name": "A TPMS",
+      "num_sensors": 10,
+      "tpms_measures": [
+        {
+          "axle_tireire_location_code": 33,
+          "tire_location_str": "FLO",
+          "axle_location": 1,
+          "location_code_hex_str": "21",
+          "tire_pressure_mbar": 7200,
+          "tire_location": 1,
+          "tire_pressure_psi": 104.42718,
+          "tire_temperature_c": 16
+        },
+        {
+          "axle_tireire_location_code": 34,
+          "tire_location_str": "FLI",
+          "axle_location": 1,
+          "location_code_hex_str": "22",
+          "tire_pressure_mbar": 6700,
+          "tire_location": 3,
+          "tire_pressure_psi": 97.175285,
+          "tire_temperature_c": 16
+        },
+        {
+          "axle_tireire_location_code": 35,
+          "tire_location_str": "FRI",
+          "axle_location": 1,
+          "location_code_hex_str": "23",
+          "tire_pressure_mbar": 6600,
+          "tire_location": 4,
+          "tire_pressure_psi": 95.72491,
+          "tire_temperature_c": 17
+        },
+        {
+          "axle_tireire_location_code": 36,
+          "tire_location_str": "FRO",
+          "axle_location": 1,
+          "location_code_hex_str": "24",
+          "tire_pressure_mbar": 7200,
+          "tire_location": 2,
+          "tire_pressure_psi": 104.42718,
+          "tire_temperature_c": 16
+        },
+        {
+          "axle_tireire_location_code": 37,
+          "tire_location_str": "RLO",
+          "axle_location": 2,
+          "location_code_hex_str": "25",
+          "tire_pressure_mbar": 0,
+          "tire_location": 1,
+          "tire_pressure_psi": 0,
+          "tire_temperature_c": -50
+        },
+        {
+          "axle_tireire_location_code": 38,
+          "tire_location_str": "RLI",
+          "axle_location": 2,
+          "location_code_hex_str": "26",
+          "tire_pressure_mbar": 6600,
+          "tire_location": 3,
+          "tire_pressure_psi": 95.72491,
+          "tire_temperature_c": 19
+        },
+        {
+          "axle_tireire_location_code": 39,
+          "tire_location_str": "RRI",
+          "axle_location": 2,
+          "location_code_hex_str": "27",
+          "tire_pressure_mbar": 6600,
+          "tire_location": 4,
+          "tire_pressure_psi": 95.72491,
+          "tire_temperature_c": 17
+        },
+        {
+          "axle_tireire_location_code": 40,
+          "tire_location_str": "RRO",
+          "axle_location": 2,
+          "location_code_hex_str": "28",
+          "tire_pressure_mbar": 6900,
+          "tire_location": 2,
+          "tire_pressure_psi": 100.07604,
+          "tire_temperature_c": 18
+        },
+        {
+          "axle_tireire_location_code": 73,
+          "tire_location_str": "Tank",
+          "axle_location": null,
+          "location_code_hex_str": "49",
+          "tire_pressure_mbar": 7900,
+          "tire_location": null,
+          "tire_pressure_psi": 114.57982,
+          "tire_temperature_c": 16
+        },
+        {
+          "axle_tireire_location_code": 74,
+          "tire_location_str": "Undefined",
+          "axle_location": null,
+          "location_code_hex_str": "4a",
+          "tire_pressure_mbar": 6400,
+          "tire_location": null,
+          "tire_pressure_psi": 92.82416,
+          "tire_temperature_c": 19
+        }
+      ]
+    }
+  }
+}

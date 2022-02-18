@@ -1,0 +1,72 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "port_num": {
+      "type": "number"
+    },
+    "driver": {
+      "type": "number"
+    },
+    "port_type": {
+      "type": "number"
+    },
+    "descript": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "rev": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "port_num",
+    "driver",
+    "port_type",
+    "descript",
+    "model",
+    "rev"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 257,
+      "status": null,
+      "received_time_stamp": "2022-01-13 13:54:52.000000000",
+      "selector": 0,
+      "name": "Peripheral",
+      "display_name": "Periph Versions",
+      "port_num": 0,
+      "driver": 2,
+      "port_type": 0,
+      "descript": "",
+      "model": "",
+      "rev": ""
+    }
+  }
+}

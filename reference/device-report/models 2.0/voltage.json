@@ -1,0 +1,62 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "main_power": {
+      "type": "number"
+    },
+    "aux_power": {
+      "type": "number"
+    },
+    "charge_power": {
+      "type": "number"
+    },
+    "battery_power": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "main_power",
+    "aux_power",
+    "charge_power",
+    "battery_power"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 528,
+      "status": null,
+      "received_time_stamp": "2021-06-23 19:24:14.000000000",
+      "selector": 1,
+      "name": "voltage",
+      "display_name": "Voltage",
+      "main_power": 11.77,
+      "aux_power": 0.019,
+      "charge_power": 0,
+      "battery_power": 4.156
+    }
+  }
+}
