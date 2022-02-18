@@ -1,0 +1,159 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "comm_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "temperature_elements": {
+      "type": "number"
+    },
+    "ble_temperature_sensormeasure": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "required": [
+          "sensor_id",
+          "size",
+          "sensor_status",
+          "type",
+          "battery"
+        ],
+        "properties": {
+          "sensor_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "size": {
+            "type": "number"
+          },
+          "sensor_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "battery": {
+            "type": "string",
+            "minLength": 1
+          },
+          "data_start": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "required": [
+                "first_age",
+                "period"
+              ],
+              "properties": {
+                "first_age": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "period": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "data_reading": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "required": [
+                "reading_quantity"
+              ],
+              "properties": {
+                "reading_quantity": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "temperature_readings": {
+                  "type": "array",
+                  "items": {
+                    "required": [],
+                    "properties": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "comm_status",
+    "temperature_elements",
+    "ble_temperature_sensormeasure"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1579,
+      "status": null,
+      "received_time_stamp": "2022-01-03 09:20:28.000000000",
+      "selector": 0,
+      "name": "Beta BLE Temperature Sensor",
+      "display_name": " BLE Temperature Sensor",
+      "comm_status": "Online",
+      "temperature_elements": 1,
+      "ble_temperature_sensormeasure": [
+        {
+          "sensor_id": "0",
+          "size": 3,
+          "sensor_status": "Online",
+          "type": "Reading",
+          "battery": "OK",
+          "data_start": [
+            {
+              "first_age": "NA",
+              "period": "NA"
+            }
+          ],
+          "data_reading": [
+            {
+              "reading_quantity": "4",
+              "temperature_readings": [
+                "4C",
+                "5C",
+                "4C",
+                "3C"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

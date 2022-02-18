@@ -1,0 +1,57 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "comm_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sfk_wheel_end_measure": {
+      "type": "array",
+      "items": {
+        "required": [],
+        "properties": {}
+      }
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "comm_status",
+    "sfk_wheel_end_measure"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1577,
+      "status": null,
+      "received_time_stamp": "2021-12-15 12:01:56.000000000",
+      "selector": 0,
+      "name": "Beta SKF Wheel End Monitoring System",
+      "display_name": "SKF Wheel End Sensor",
+      "comm_status": "Online",
+      "sfk_wheel_end_measure": []
+    }
+  }
+}

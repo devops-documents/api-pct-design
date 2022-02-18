@@ -1,0 +1,62 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fix_shift": {
+      "type": "number"
+    },
+    "fix3_d_mask": {
+      "type": "number"
+    },
+    "nsat_mask": {
+      "type": "number"
+    },
+    "fix_mask": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "fix_shift",
+    "fix3_d_mask",
+    "nsat_mask",
+    "fix_mask"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 4096,
+      "status": null,
+      "received_time_stamp": "2022-02-18 06:58:33.000000000",
+      "selector": 12,
+      "name": "NMEAData",
+      "display_name": "NMEAData",
+      "fix_shift": 2,
+      "fix3_d_mask": 3,
+      "nsat_mask": 31,
+      "fix_mask": 15
+    }
+  }
+}

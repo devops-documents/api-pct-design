@@ -1,0 +1,44 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {},
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "odometer": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "name",
+    "display_name",
+    "odometer"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1554,
+      "status": null,
+      "received_time_stamp": "2021-12-15 12:01:55.000000000",
+      "selector": null,
+      "name": "A ABS Odometer",
+      "display_name": "ABS Odometer",
+      "odometer": 3404
+    }
+  }
+}

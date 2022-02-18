@@ -1,0 +1,63 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manufacturer_info": {},
+    "serial_num": {
+      "type": "number"
+    },
+    "abs_fw_version": {
+      "type": "number"
+    },
+    "model": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "status",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "serial_num",
+    "abs_fw_version",
+    "model"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1572,
+      "status": "Initializing",
+      "received_time_stamp": "2022-01-03 09:20:49.000000000",
+      "selector": 0,
+      "name": "Beta ABS Identification",
+      "display_name": "Beta ABS ID",
+      "manufacturer_info": null,
+      "serial_num": 0,
+      "abs_fw_version": 0,
+      "model": 0
+    }
+  }
+}

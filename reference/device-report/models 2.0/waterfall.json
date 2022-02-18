@@ -1,64 +1,6 @@
 {
   "description": "",
   "type": "object",
-  "properties": {
-    "id": {
-      "type": "number"
-    },
-    "status": {},
-    "received_time_stamp": {
-      "type": "string",
-      "minLength": 1
-    },
-    "selector": {
-      "type": "number"
-    },
-    "name": {
-      "type": "string",
-      "minLength": 1
-    },
-    "display_name": {
-      "type": "string",
-      "minLength": 1
-    },
-    "number_of_files": {
-      "type": "number"
-    },
-    "waterfall_info": {
-      "type": "array",
-      "uniqueItems": true,
-      "minItems": 1,
-      "items": {
-        "required": [
-          "config_id",
-          "config_crc",
-          "config_identification_version"
-        ],
-        "properties": {
-          "config_id": {
-            "type": "number"
-          },
-          "config_crc": {
-            "type": "string",
-            "minLength": 1
-          },
-          "config_identification_version": {
-            "type": "string",
-            "minLength": 1
-          }
-        }
-      }
-    }
-  },
-  "required": [
-    "id",
-    "received_time_stamp",
-    "selector",
-    "name",
-    "display_name",
-    "number_of_files",
-    "waterfall_info"
-  ],
   "x-examples": {
     "example-1": {
       "id": 259,
@@ -96,5 +38,64 @@
         }
       ]
     }
-  }
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "number_of_files": {
+      "type": "number"
+    },
+    "waterfall_info": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "config_id": {
+            "type": "number"
+          },
+          "config_crc": {
+            "type": "string",
+            "minLength": 1
+          },
+          "config_identification_version": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "config_id",
+          "config_crc",
+          "config_identification_version"
+        ]
+      }
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "number_of_files",
+    "waterfall_info"
+  ]
 }

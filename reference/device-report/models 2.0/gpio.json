@@ -1,0 +1,63 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {},
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "gpio_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "gpio": {
+      "type": "array",
+      "items": {
+        "required": [],
+        "properties": {}
+      }
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "name",
+    "display_name",
+    "gpio_status",
+    "gpio"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 80,
+      "status": null,
+      "received_time_stamp": "2022-01-03 09:21:03.000000000",
+      "selector": null,
+      "name": "GPIO status",
+      "display_name": "GPIO status",
+      "gpio_status": "0032",
+      "gpio": [
+        "output low",
+        "output low",
+        "output low",
+        "output low",
+        "output low",
+        "input high",
+        "output low",
+        "input low"
+      ]
+    }
+  }
+}

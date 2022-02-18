@@ -1,0 +1,83 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "comm_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sensor_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "door_state": {
+      "type": "string",
+      "minLength": 1
+    },
+    "door_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "door_sequence": {
+      "type": "string",
+      "minLength": 1
+    },
+    "battery": {
+      "type": "string",
+      "minLength": 1
+    },
+    "temperature_c": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "comm_status",
+    "sensor_status",
+    "door_state",
+    "door_type",
+    "door_sequence",
+    "battery",
+    "temperature_c"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1576,
+      "status": null,
+      "received_time_stamp": "2022-01-03 09:22:02.000000000",
+      "selector": 0,
+      "name": "bleDoorSensor",
+      "display_name": " BLE Door Sensor",
+      "comm_status": "Online",
+      "sensor_status": "Online",
+      "door_state": "Open",
+      "door_type": "Swing",
+      "door_sequence": "Missed",
+      "battery": "OK",
+      "temperature_c": 7
+    }
+  }
+}

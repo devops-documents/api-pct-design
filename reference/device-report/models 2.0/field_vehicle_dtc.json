@@ -1,0 +1,54 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "num_diagnostics_codes": {
+      "type": "number"
+    },
+    "diagnostics_codes": {},
+    "diagnostics_light": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "num_diagnostics_codes",
+    "diagnostics_light"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1026,
+      "status": null,
+      "received_time_stamp": "2022-01-03 09:20:57.000000000",
+      "selector": 0,
+      "name": "Vehicle DTC",
+      "display_name": "Vehicle DTC",
+      "num_diagnostics_codes": 0,
+      "diagnostics_codes": null,
+      "diagnostics_light": 0
+    }
+  }
+}

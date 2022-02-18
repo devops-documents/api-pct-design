@@ -1,6 +1,24 @@
 {
   "description": "",
   "type": "object",
+  "x-examples": {
+    "example-1": {
+      "id": 1569,
+      "status": "Online",
+      "received_time_stamp": "2021-12-02 09:54:29.000000000",
+      "selector": 0,
+      "name": "ABS DTC Beta",
+      "display_name": "ABS Beta",
+      "num_sensors": 0,
+      "abs_voltage": 13.8,
+      "reserved": "00",
+      "abs_warning_lamp": 0,
+      "abs_warning_lamp_status": "off",
+      "num_of_faults": 0,
+      "is_any_fault_active": false,
+      "absbeta_measure": []
+    }
+  },
   "properties": {
     "id": {
       "type": "number"
@@ -50,8 +68,7 @@
     "absbeta_measure": {
       "type": "array",
       "items": {
-        "required": [],
-        "properties": {}
+        "type": "object"
       }
     }
   },
@@ -70,23 +87,5 @@
     "num_of_faults",
     "is_any_fault_active",
     "absbeta_measure"
-  ],
-  "x-examples": {
-    "example-1": {
-      "id": 1569,
-      "status": "Online",
-      "received_time_stamp": "2021-12-02 09:54:29.000000000",
-      "selector": 0,
-      "name": "ABS DTC Beta",
-      "display_name": "ABS Beta",
-      "num_sensors": 0,
-      "abs_voltage": 13.8,
-      "reserved": "00",
-      "abs_warning_lamp": 0,
-      "abs_warning_lamp_status": "off",
-      "num_of_faults": 0,
-      "is_any_fault_active": false,
-      "absbeta_measure": []
-    }
-  }
+  ]
 }

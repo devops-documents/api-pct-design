@@ -1,0 +1,100 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rssi": {
+      "type": "number"
+    },
+    "mask": {
+      "type": "number"
+    },
+    "roaming_index": {
+      "type": "number"
+    },
+    "service_type_index": {
+      "type": "number"
+    },
+    "mobile_country_code": {
+      "type": "number"
+    },
+    "mobile_network_code": {
+      "type": "number"
+    },
+    "tower_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tower_centroid_latitude": {
+      "type": "number"
+    },
+    "tower_centroid_longitude": {
+      "type": "number"
+    },
+    "cellular_band": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rx_tx_ec": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "rssi",
+    "mask",
+    "roaming_index",
+    "service_type_index",
+    "mobile_country_code",
+    "mobile_network_code",
+    "tower_id",
+    "tower_centroid_latitude",
+    "tower_centroid_longitude",
+    "cellular_band",
+    "rx_tx_ec"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 17,
+      "status": null,
+      "received_time_stamp": "2022-01-03 09:21:03.000000000",
+      "selector": 127,
+      "name": "Network",
+      "display_name": "Network",
+      "rssi": 67,
+      "mask": 127,
+      "roaming_index": 0,
+      "service_type_index": 4,
+      "mobile_country_code": 31,
+      "mobile_network_code": 26,
+      "tower_id": "0000000001e4",
+      "tower_centroid_latitude": 0,
+      "tower_centroid_longitude": 0,
+      "cellular_band": "0009150000",
+      "rx_tx_ec": "ffb7000d0007"
+    }
+  }
+}

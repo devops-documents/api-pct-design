@@ -1,0 +1,67 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fuel_level_percentage": {
+      "type": "number"
+    },
+    "odtsince_milkms": {
+      "type": "number"
+    },
+    "odtsince_milmiles": {
+      "type": "number"
+    },
+    "odtsince_dtcclear_kms": {
+      "type": "number"
+    },
+    "odtsince_dtcclear_miles": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "fuel_level_percentage",
+    "odtsince_milkms",
+    "odtsince_milmiles",
+    "odtsince_dtcclear_kms",
+    "odtsince_dtcclear_miles"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1027,
+      "status": null,
+      "received_time_stamp": "2022-01-03 09:20:57.000000000",
+      "selector": 125,
+      "name": "Field Vehicle ECU",
+      "display_name": "Vehicle ECM",
+      "fuel_level_percentage": 0,
+      "odtsince_milkms": 0,
+      "odtsince_milmiles": 0,
+      "odtsince_dtcclear_kms": 21,
+      "odtsince_dtcclear_miles": 13.04879
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {},
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "device_config": {
+      "type": "number"
+    },
+    "configuration_desc": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "name",
+    "display_name",
+    "device_config",
+    "configuration_desc"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 258,
+      "status": null,
+      "received_time_stamp": "2022-01-13 13:54:52.000000000",
+      "selector": null,
+      "name": "Config Version",
+      "display_name": "Config Version",
+      "device_config": 32767,
+      "configuration_desc": "X002_03"
+    }
+  }
+}

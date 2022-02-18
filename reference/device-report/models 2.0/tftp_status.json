@@ -1,0 +1,49 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tftp_status": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "tftp_status"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 512,
+      "status": null,
+      "received_time_stamp": "2022-01-13 13:54:52.000000000",
+      "selector": 0,
+      "name": "TFTP status",
+      "display_name": "TFTP status",
+      "tftp_status": " Successful"
+    }
+  },
+  "title": ""
+}

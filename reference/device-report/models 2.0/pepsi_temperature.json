@@ -1,0 +1,521 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "comm_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "temperature_elements": {
+      "type": "number"
+    },
+    "pepsi_temperaturemeasure": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "required": [
+          "age_of_reading",
+          "battery_level",
+          "temperature",
+          "humidity",
+          "mac_address"
+        ],
+        "properties": {
+          "age_of_reading": {
+            "type": "number"
+          },
+          "battery_level": {
+            "type": "number"
+          },
+          "s_status": {},
+          "sensor_id": {},
+          "temperature": {
+            "type": "number"
+          },
+          "temperature_str": {},
+          "humidity": {
+            "type": "number"
+          },
+          "mac_address": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "comm_status",
+    "temperature_elements",
+    "pepsi_temperaturemeasure"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1581,
+      "status": null,
+      "received_time_stamp": "2021-11-13 06:14:39.000000000",
+      "selector": 2,
+      "name": "Minew Temp Sensor",
+      "display_name": "Minew Temp Sensor",
+      "comm_status": "Online",
+      "temperature_elements": 43,
+      "pepsi_temperaturemeasure": [
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.91,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:20:f6"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.62,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a5:8f:b6"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.93,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:20:2f"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.81,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:6d:c6"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 24.46,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:6c:94"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 21,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:02"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.85,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:25"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 21.18,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:5d"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 23.3,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:bb:44"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 22.54,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:07"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.78,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:20:72"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.78,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:60"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 81,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.82,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:6d:ae"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.72,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:20:33"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.7,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:18"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.91,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:20:ae"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.96,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:20:89"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 23.4,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:23"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.73,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a5:8f:42"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.88,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:1c"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.81,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:22:66"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 67,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.82,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:6d:f9"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.86,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:86"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.75,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:13"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.93,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:22:29"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 24.52,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:bb:56"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 21.02,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:1f:e8"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 21.2,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:20:aa"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 0,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": -45,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:36"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 21.05,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:0e"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.96,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:22:62"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.66,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:62"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.69,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:c0:b0"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 21.12,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:9b:4f"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.97,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:20:dc"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.99,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:20:fa"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.98,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:20:15"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:6d:b2"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.96,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:20:d6"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 21.11,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:23:51"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.83,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:21:b4"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.92,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:22:27"
+        },
+        {
+          "age_of_reading": 0,
+          "battery_level": 100,
+          "s_status": null,
+          "sensor_id": null,
+          "temperature": 20.68,
+          "temperature_str": null,
+          "humidity": 0,
+          "mac_address": "a1:22:64"
+        }
+      ]
+    }
+  }
+}
