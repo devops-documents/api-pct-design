@@ -1,0 +1,64 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "condition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "light_activated_num": {
+      "type": "number"
+    },
+    "light_activated_seconds": {
+      "type": "number"
+    },
+    "type": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "condition",
+    "light_activated_num",
+    "light_activated_seconds",
+    "type"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1555,
+      "status": null,
+      "received_time_stamp": "2020-06-02 17:32:09.000000000",
+      "selector": 0,
+      "name": "Alpha ATIS",
+      "display_name": "A ATIS",
+      "condition": "Off",
+      "light_activated_num": 0,
+      "light_activated_seconds": 0,
+      "type": "PSI Indicator light"
+    }
+  }
+}
