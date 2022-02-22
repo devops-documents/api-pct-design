@@ -116,115 +116,9 @@ paths:
         - Reports
       x-internal: true
     parameters: []
-  /reports-asc:
+  /reports/bulk:
     get:
-      summary: Retrieve gateway reports (Ascending Order)
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  body:
-                    type: array
-                    items:
-                      $ref: ./device-report/models/report.v1.yaml
-                  total_reports:
-                    type: integer
-                    description: Total number of reports that are returned
-                  current_page:
-                    type: integer
-                    description: Current page index
-                  total_pages:
-                    type: integer
-                    description: Total number of pages returned
-                  response_message:
-                    type: string
-                  status:
-                    type: boolean
-            multipart/form-data:
-              schema:
-                type: object
-                properties: {}
-            text/html:
-              schema:
-                $ref: ./device-report/models/report.v1.yaml
-            text/plain:
-              schema:
-                type: object
-                properties:
-                  '':
-                    $ref: ./device-report/models/report.v1.yaml
-                  total_reports:
-                    type: integer
-                    description: Total reports based on the search criteria specified in the request
-                  current_page:
-                    type: integer
-                    description: Current page index
-                  total_pages:
-                    type: integer
-                    description: Total number of pages based on the result set
-          headers: {}
-      operationId: get-device-report-asc
-      parameters:
-        - schema:
-            type: string
-          in: query
-          name: gateway-id
-          description: |
-            Required to search by gateway-id (imei). If the query-method is set to GATEWAY_NUMBER, the gateway-id must be specificied
-        - schema:
-            type: string
-            enum:
-              - DATETIME
-              - REPORT_NUMBER
-              - GATEWAY_NUMBER
-              - LATEST
-          in: query
-          name: query-method
-          description: |
-            Indicates how to query the server
-
-            REPORT-NUMBER is a sequential number assigned for each report that is generated across all customer devices
-
-            GATEWAY_NUMBER is a sequential number assigned for each report that is generated per customer device
-
-            DATETIME is the datetime of when the report is received by the PCT server
-        - schema:
-            type: string
-          in: query
-          name: from
-          description: 'From: [server datetime | report number | gateway number]'
-        - schema:
-            type: string
-          in: query
-          name: to
-          description: 'To: [server datetime | report number | gateway number]'
-        - schema:
-            type: integer
-          in: query
-          name: results-per-page
-          description: Number of results per page. Default is 100 records
-        - schema:
-            type: integer
-          in: query
-          name: page-index
-          description: 'For a multi-page query, returns the specified page (from 1 to total_pages) '
-      description: |-
-        Returns historical gateway reports. Reports are generated based on PCT event types.
-
-        Open ended queries will pull recent reports across all gateways for a given customer (based on the data you are authorized to see, or you can limit this by providing a gateway-id (imei). 
-
-        For further filtering, you can pass in a query method and provide the appropriate 'from' and 'to'. See specific instructions in the appropriate fields.   
-      tags:
-        - Reports
-      x-internal: true
-    parameters: []
-  /reports-without-pagination:
-    get:
-      summary: Retrieve gateway reports (Without Pagination)
+      summary: Retrieve gateway reports (Bulk)
       responses:
         '200':
           description: OK
@@ -264,14 +158,8 @@ paths:
                     type: integer
                     description: Total number of pages based on the result set
           headers: {}
-      operationId: get-device-report-wo-pagination
+      operationId: get-device-report-bulk
       parameters:
-        - schema:
-            type: string
-          in: query
-          name: gateway-id
-          description: |
-            Required to search by gateway-id (imei). If the query-method is set to GATEWAY_NUMBER, the gateway-id must be specificied
         - schema:
             type: string
             enum:
@@ -281,28 +169,28 @@ paths:
               - LATEST
           in: query
           name: query-method
-          description: Indicates how to query the server REPORT-NUMBER is a sequential number assigned for each report that is generated across all customer devices GATEWAY_NUMBER is a sequential number assigned for each report that is generated per customer device DATETIME is the datetime of when the report is received by the PCT server
+          description: Indicates how to query the server REPORT-NUMBER is a sequential number assigned for each report that is generated across all customer devices DATETIME is the datetime of when the report is received by the PCT server
         - schema:
             type: string
           in: query
           name: from
-          description: 'From: [server datetime | report number | gateway number]'
+          description: 'From: [server datetime | report number ]'
         - schema:
             type: string
           in: query
           name: to
-          description: 'To: [server datetime | report number | gateway number]'
+          description: 'To: [server datetime | report number]'
         - schema:
             type: integer
           in: query
           name: max-results
-          description: 'Number of results per page. Default is 100 records, Max 10000'
+          description: Number of results per page. Default is 10000 records
       description: |-
-        Returns historical gateway reports. Reports are generated based on PCT event types.
+        Returns historical gateway reports in ascending order. Reports are generated based on PCT event types.
 
-        Open ended queries will pull recent reports across all gateways for a given customer (based on the data you are authorized to see, or you can limit this by providing a gateway-id (imei). 
-
-        For further filtering, you can pass in a query method and provide the appropriate 'from' and 'to'. See specific instructions in the appropriate fields.   
+        Filtering based on report_number and datetime is allowed.
+        The limit of a single query is set to 10000.
+        Further subsequent calls have to be made in order to fetch more reports (with appropriate incrementing parameters).
       tags:
         - Reports
       x-internal: true
