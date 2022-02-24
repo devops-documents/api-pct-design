@@ -1,0 +1,54 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "status": {},
+    "received_time_stamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selector": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "upload_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "uri": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "id",
+    "received_time_stamp",
+    "selector",
+    "name",
+    "display_name",
+    "upload_status",
+    "uri"
+  ],
+  "x-examples": {
+    "example-1": {
+      "id": 1582,
+      "status": null,
+      "received_time_stamp": "2021-10-18 21:36:22.000000000",
+      "selector": 0,
+      "name": "Camera Photo Status",
+      "display_name": "Camera Photo Status",
+      "upload_status": "Upload Success",
+      "uri": "http://images.phillips-connect.net/or4t4qVI3R.jpg"
+    }
+  }
+}
