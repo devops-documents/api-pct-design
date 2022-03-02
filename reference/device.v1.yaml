@@ -165,16 +165,16 @@ paths:
             enum:
               - DATETIME
               - REPORT_NUMBER
-              - GATEWAY_NUMBER
-              - LATEST
           in: query
           name: query-method
           description: Indicates how to query the server REPORT-NUMBER is a sequential number assigned for each report that is generated across all customer devices DATETIME is the datetime of when the report is received by the PCT server
+          required: true
         - schema:
             type: string
           in: query
           name: from
           description: 'From: [server datetime | report number ]'
+          required: true
         - schema:
             type: string
           in: query
