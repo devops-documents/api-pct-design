@@ -75,15 +75,11 @@ properties:
         description: Indicates whether the trailer is on a trip. Please consult the functional behavior document for each gateway product you own.
       odometer:
         type: integer
-      ambient_temperature:
-        type: number
-        description: Units in celcius rounded to nearest tenth.
   internal_sensors:
     type: array
     items:
       anyOf:
         - $ref: ./gps-sensor.v1.yaml
-        - $ref: ./temperature-sensor.v1.yaml
         - $ref: ./power-sensor.v1.yaml
   peripheral_sensors:
     type: array
@@ -94,11 +90,6 @@ properties:
         - $ref: ./cargo-sensor.v1.yaml
         - $ref: ./tpms-sensor.v1.yaml
         - $ref: ./door-sensor.v1.yaml
-        - $ref: ./gladhands.v1.yaml
-        - $ref: ./lite-sentry.v1.yaml
-        - $ref: ./tank-pressure.v1.yaml
-        - $ref: ./trailer-weight.v1.yaml
-        - $ref: ./tractor-pairing.v1.yaml
         - $ref: ./temperature-sensor.v1.yaml
   debug_number:
     type: integer

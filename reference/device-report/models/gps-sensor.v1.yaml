@@ -10,19 +10,16 @@ properties:
     type: number
     description: Floating number with 6 digits of precision
     format: float
-    example: '33.628342'
+    example: 33.628342
   longitude:
     type: number
     description: Floating number with 6 digits of precision
     format: float
-    example: '-117.927933'
+    example: -117.927933
   measurement_datetime:
     type: string
     description: The datetime of the GPS reading in UTC. Format is ISO8601.
     example: '2012-04-21T18:25:43Z'
-  speed:
-    description: Units in kilometers per hour rounded to nearest tenth.
-    type: number
   HDOP:
     type: number
     description: Floating number with 1 digit of precision
@@ -36,5 +33,7 @@ properties:
     format: float
     example: 2.3
     description: Floating number with 2 digits of precision
+  is_locked:
+    type: boolean
 required:
   - type

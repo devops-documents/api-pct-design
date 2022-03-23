@@ -1,5 +1,6 @@
 title: Door sensor
 type: object
+description: ''
 properties:
   type:
     type: string
@@ -8,10 +9,13 @@ properties:
   condition:
     type: string
     enum:
-      - healthy
-      - error
-  status:
+      - initializing
+      - offline
+      - online
+      - not installed
+  door_state:
     type: string
     enum:
       - open
       - closed
+      - unknown

@@ -1,10 +1,28 @@
 title: Temperature sensor
 type: object
+description: ''
 properties:
   type:
     type: string
     enum:
       - temperature-sensor
+  condition:
+    type: string
+    enum:
+      - initializing
+      - offline
+      - communication error
+      - hardware error
+      - online
+      - application fault
+      - not installed
+  status:
+    type: string
+    enum:
+      - offline
+      - online
+  reefer_enabled:
+    type: boolean
   measurements:
     type: array
     items:
@@ -13,6 +31,10 @@ properties:
         sensor_id:
           type: string
         temperature:
+          type: number
+          example: 3.1
+          format: float
+        measurement_datetime:
           type: string
 required:
   - type

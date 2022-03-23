@@ -14,12 +14,12 @@ properties:
         type: number
         description: Units are in volts with two digits of precision
         format: float
-        example: '11.23'
+        example: 11.23
       external_voltage_2:
         type: number
         description: units are in volts with two digits of precision
         format: float
-        example: '11.23'
+        example: 11.23
   battery:
     type: object
     description: ''
@@ -28,7 +28,7 @@ properties:
         type: number
         description: Units are in volts with two digits of precision
         format: float
-        example: '11.23'
+        example: 11.23
       remaining_capacity:
         type: integer
         description: Units are in percentage between 0 and 100.

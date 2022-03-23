@@ -21,7 +21,9 @@ properties:
     type: number
     description: Units in volts with two digits of precision
     format: float
-    example: '11.23'
+    example: 11.23
+  warning_lamp_status:
+    type: boolean
   faults:
     type: array
     description: Based on the J1587 standard

@@ -11,11 +11,12 @@ properties:
       - healthy
       - unresponsive
       - error
-  cargo-state:
+  cargo_state:
     type: string
     enum:
       - loaded
       - empty
       - unknown
+      - unloaded
 required:
   - type
