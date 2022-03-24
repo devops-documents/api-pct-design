@@ -47,7 +47,5 @@ properties:
       properties:
         FMI_code:
           type: string
-  '':
-    type: string
 required:
   - type
