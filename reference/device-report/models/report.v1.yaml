@@ -67,14 +67,17 @@ properties:
           - battery
           - external_power1
           - external_power2
-      internal_temperature:
-        type: number
-        description: Internal tempature of the gateway. Units in Celsius
       is_trip:
         type: boolean
         description: Indicates whether the trailer is on a trip. Please consult the functional behavior document for each gateway product you own.
       odometer:
-        type: integer
+        type: number
+      city:
+        type: string
+      state:
+        type: string
+      address:
+        type: string
   internal_sensors:
     type: array
     items:
@@ -91,6 +94,7 @@ properties:
         - $ref: ./tpms-sensor.v1.yaml
         - $ref: ./door-sensor.v1.yaml
         - $ref: ./temperature-sensor.v1.yaml
+        - $ref: ./lite-sentry-sensor.v1.yaml
   debug_number:
     type: integer
     description: For PCT use. Please store this along with the report
@@ -105,6 +109,8 @@ properties:
       (a) is major change
       (b) is minor change, may possibly partially break some endpoints
       (c) is for inclusion of new fields, totally backwards compatible
+  product_code:
+    type: string
 required:
   - gateway_id
   - report_number

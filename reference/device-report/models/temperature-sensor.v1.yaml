@@ -23,18 +23,16 @@ properties:
       - online
   reefer_enabled:
     type: boolean
+  measurement_datetime:
+    type: string
   measurements:
     type: array
     items:
       type: object
       properties:
-        sensor_id:
-          type: string
         temperature:
           type: number
           example: 3.1
           format: float
-        measurement_datetime:
-          type: string
 required:
   - type
