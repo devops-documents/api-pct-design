@@ -10,14 +10,9 @@ properties:
     enum:
       - 'off'
       - long duration delivery
-      - miswired
       - unresponsive
+      - undefined error
   airflow_alert:
     type: boolean
-  measurement_datetime:
-    type: string
-    example: '2012-04-21T18:25:43Z'
-  duration:
-    type: integer
 required:
   - type

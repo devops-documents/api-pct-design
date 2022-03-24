@@ -1,0 +1,27 @@
+title: lite-sentry-sensor.v1
+type: object
+properties:
+  type:
+    type: string
+    enum:
+      - lite-sentry
+  measurement_datetime:
+    type: string
+    example: '2012-04-21T18:25:43Z'
+  circuitState:
+    type: string
+    enum:
+      - Healthy
+      - Faulted
+  circuit:
+    type: string
+    enum:
+      - OK
+      - WARNING
+      - ERROR
+  circuitColor:
+    type: string
+    enum:
+      - Green
+      - Yellow
+      - Red

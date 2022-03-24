@@ -15,30 +15,6 @@ properties:
   odometer:
     type: number
     description: Units in kilometers rounded to nearest tenth
-  voltage:
-    type: number
-    description: Units in volts with two digits of precision
-    format: float
-    example: 11.23
-  warning_lamp_status:
-    type: string
-    enum:
-      - 'off'
-      - 'on'
-      - error
-      - not available
-  lamp_status:
-    type: string
-    enum:
-      - 'off'
-      - 'on'
-      - error
-      - not available
-  manufacturer:
-    type: string
-  measurement_datetime:
-    type: string
-    example: '2012-04-21T18:25:43Z'
   faults:
     type: array
     description: Based on the J1587 standard

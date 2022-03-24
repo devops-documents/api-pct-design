@@ -11,11 +11,7 @@ properties:
     enum:
       - healthy
       - unresponsive
-      - error
-      - fault
-      - comm error
-      - missing sensors
-      - unknown
+      - faulty
   measurements:
     type: array
     items:
