@@ -15,30 +15,39 @@ properties:
   odometer:
     type: number
     description: Units in kilometers rounded to nearest tenth
-  VIN:
-    type: string
   voltage:
     type: number
     description: Units in volts with two digits of precision
     format: float
     example: 11.23
   warning_lamp_status:
-    type: boolean
+    type: string
+    enum:
+      - 'off'
+      - 'on'
+      - error
+      - not available
+  lamp_status:
+    type: string
+    enum:
+      - 'off'
+      - 'on'
+      - error
+      - not available
+  manufacturer:
+    type: string
+  measurement_datetime:
+    type: string
+    example: '2012-04-21T18:25:43Z'
   faults:
     type: array
     description: Based on the J1587 standard
     items:
       type: object
       properties:
-        SID:
-          type: string
-        is_active:
-          type: boolean
-        count:
-          type: integer
         FMI_code:
           type: string
-        FMI_description:
-          type: string
+  '':
+    type: string
 required:
   - type

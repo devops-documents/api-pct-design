@@ -1,5 +1,6 @@
 title: Cargo sensor
 type: object
+description: ''
 properties:
   type:
     type: string
@@ -18,5 +19,6 @@ properties:
       - empty
       - unknown
       - unloaded
+      - na
 required:
   - type

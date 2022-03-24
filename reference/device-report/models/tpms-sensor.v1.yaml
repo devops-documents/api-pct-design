@@ -12,6 +12,10 @@ properties:
       - healthy
       - unresponsive
       - error
+      - fault
+      - comm error
+      - missing sensors
+      - unknown
   measurements:
     type: array
     items:
@@ -24,10 +28,10 @@ properties:
           description: Units in millibars
           type: integer
         axle_index:
-          type: string
+          type: integer
           description: Location of the axle from front (axle 1) to rear (axle n)
         tire_index:
-          type: string
+          type: integer
           description: |
             Relative location of the tire:
 
