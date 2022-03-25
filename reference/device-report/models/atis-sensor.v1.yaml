@@ -12,6 +12,7 @@ properties:
       - long duration delivery
       - unresponsive
       - undefined error
+      - error
   airflow_alert:
     type: boolean
 required:
