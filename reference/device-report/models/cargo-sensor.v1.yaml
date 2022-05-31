@@ -12,17 +12,13 @@ properties:
       - healthy
       - unresponsive
       - error
-      - sensor fault
-      - sensor calibration error
-      - content error
-      - not detected
-      - no echo
-      - undefined
   cargo_state:
     type: string
     enum:
       - loaded
       - empty
-      - blocked sensor
+      - unknown
+      - unloaded
+      - na
 required:
   - type
