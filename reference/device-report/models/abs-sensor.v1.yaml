@@ -1,27 +1,52 @@
-title: ABS Sensor
 type: object
-description: ''
 properties:
   type:
     type: string
-    enum:
-      - ABS
   condition:
     type: string
-    enum:
-      - healthy
-      - unresponsive
-      - error
   odometer:
+    type: integer
+  voltage:
     type: number
-    description: Units in kilometers rounded to nearest tenth
+  warning_lamp_status:
+    type: string
+  lamp_status:
+    type: string
+  manufacturer:
+    type: string
+  measurement_datetime:
+    type: string
+  model:
+    type: string
+  active_fault:
+    type: boolean
   faults:
     type: array
-    description: Based on the J1587 standard
     items:
       type: object
       properties:
         FMI_code:
-          type: string
-required:
-  - type
+          type: integer
+        count:
+          type: integer
+        SID:
+          type: integer
+        PID:
+          type: integer
+x-examples:
+  example-1:
+    type: ABS
+    condition: healthy
+    odometer: 0
+    voltage: 11.23
+    warning_lamp_status: 'off'
+    lamp_status: 'off'
+    manufacturer: string
+    measurement_datetime: '2012-04-21T18:25:43Z'
+    model: string
+    active_fault: true
+    faults:
+      - FMI_code: 0
+        count: 0
+        SID: 0
+        PID: 0
