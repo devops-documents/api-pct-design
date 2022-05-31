@@ -1,0 +1,40 @@
+Gps-sensor.v1:
+      title: GPS sensor
+      type: object
+      description: ''
+      properties:
+        type:
+          type: string
+          enum:
+            - gps-sensor
+        latitude:
+          type: number
+          description: Floating number with 6 digits of precision
+          format: float
+          example: 33.628342
+        longitude:
+          type: number
+          description: Floating number with 6 digits of precision
+          format: float
+          example: -117.927933
+        measurement_datetime:
+          type: string
+          description: The datetime of the GPS reading in UTC. Format is ISO8601.
+          example: '2012-04-21T18:25:43Z'
+        HDOP:
+          type: number
+          description: Floating number with 1 digit of precision
+          format: float
+          example: 1.6
+        satellite_count:
+          type: integer
+          description: Integer representng the number of satellites
+        gps_accuracy:
+          type: number
+          format: float
+          example: 2.3
+          description: Floating number with 2 digits of precision
+        is_locked:
+          type: boolean
+      required:
+        - type
