@@ -1,38 +1,4 @@
 type: object
-properties:
-  type:
-    type: string
-  condition:
-    type: string
-  odometer:
-    type: integer
-  voltage:
-    type: number
-  warning_lamp_status:
-    type: string
-  lamp_status:
-    type: string
-  manufacturer:
-    type: string
-  measurement_datetime:
-    type: string
-  model:
-    type: string
-  active_fault:
-    type: boolean
-  faults:
-    type: array
-    items:
-      type: object
-      properties:
-        FMI_code:
-          type: integer
-        count:
-          type: integer
-        SID:
-          type: integer
-        PID:
-          type: integer
 x-examples:
   example-1:
     type: ABS
@@ -50,3 +16,62 @@ x-examples:
         count: 0
         SID: 0
         PID: 0
+description: ''
+properties:
+  type:
+    type: string
+    enum:
+      - ABS
+  condition:
+    type: string
+    enum:
+      - healthy
+      - unresponsive
+      - error
+  odometer:
+    type: integer
+    description: Units in kilometers rounded to nearest tenth
+  voltage:
+    type: number
+    example: 11.23
+    description: Units in volts with two digits of precision
+    format: float
+  warning_lamp_status:
+    type: string
+    enum:
+      - 'off'
+      - 'on'
+      - error
+      - not available
+  lamp_status:
+    type: string
+    enum:
+      - 'off'
+      - 'on'
+      - error
+      - not available
+  manufacturer:
+    type: string
+  measurement_datetime:
+    type: string
+    example: '2012-04-21T18:25:43Z'
+  model:
+    type: string
+  active_fault:
+    type: boolean
+  faults:
+    type: array
+    description: Based on the J1587 standard
+    items:
+      type: object
+      properties:
+        FMI_code:
+          type: integer
+        count:
+          type: integer
+        SID:
+          type: integer
+        PID:
+          type: integer
+required:
+  - type
