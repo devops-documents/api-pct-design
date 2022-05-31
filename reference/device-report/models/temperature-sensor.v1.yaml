@@ -34,5 +34,11 @@ properties:
           type: number
           example: 3.1
           format: float
+          description: Unit in Celcius
+        sensor_id:
+          type: string
+        measurement_datetime:
+          type: string
+          example: '2012-04-21T18:25:43Z'
 required:
   - type
